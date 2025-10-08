@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class moving : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public float walkSpeed;
     public float jumpSpeed;

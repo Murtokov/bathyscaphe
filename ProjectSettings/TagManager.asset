@@ -3,17 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Submarine
+  - SubmarineCamera
+  - PlayerCamera
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Wall
-  - 
-  - 
+  - Submarine
+  - Submarine background
   - 
   - 
   - 
@@ -40,6 +43,15 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Backgrond marine
+    uniqueID: 12378595
+    locked: 0
+  - name: Player
+    uniqueID: 2626166779
+    locked: 0
+  - name: Submarine
+    uniqueID: 75445337
     locked: 0
   m_RenderingLayers:
   - Default
