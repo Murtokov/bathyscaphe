@@ -5,6 +5,9 @@ public class SubmarineMoving : MonoBehaviour
     public float walkSpeed;
     public float jumpSpeed;
 
+    public float maxSpeedX;
+    public float maxSpeedY;
+
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private ParticleSystem ps;
@@ -24,14 +27,19 @@ public class SubmarineMoving : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-        rb.linearVelocity = new Vector2(
+        rb.AddForce(new Vector2(
             horizontalInput * walkSpeed, 
-            verticalInput * walkSpeed);
+            verticalInput * jumpSpeed));
 
         var vel = ps.velocityOverLifetime;
         vel.enabled = true;
-        vel.x = -rb.linearVelocity.x;
-        vel.y = -rb.linearVelocity.y;
+        vel.x = -rb.linearVelocity.x / 5;
+        vel.y = -rb.linearVelocity.y / 5;
+
+        Vector2 velocity = rb.linearVelocity;
+        velocity.x = Mathf.Clamp(velocity.x, -maxSpeedX, maxSpeedX);
+        velocity.y = Mathf.Clamp(velocity.y, -maxSpeedY, maxSpeedY);
+        rb.linearVelocity = velocity;
 
 
         if (horizontalInput > 0.01f)

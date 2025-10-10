@@ -8,7 +8,6 @@ public class ChangeToSubmarine : MonoBehaviour
 
     private bool isPlayerInTrigger = false;
     private GameObject playerObject;
-    private GameObject playerCamera;
 
     private GameObject innerLight;
     private GameObject outerLight;  
@@ -24,7 +23,6 @@ public class ChangeToSubmarine : MonoBehaviour
 
     void Start()
     {
-        playerCamera = transform.parent.Find("Player Camera").gameObject;
         playerObject = transform.parent.Find("Player").gameObject;
 
         innerLight = transform.parent.Find("Submarine Inner Light").gameObject;
@@ -74,7 +72,6 @@ public class ChangeToSubmarine : MonoBehaviour
     private void SwapToSubmarine()
     {
         Debug.Log("ToSub");
-        playerCamera.SetActive(false);
         playerObject.SetActive(false);
 
         submarineCamera.SetActive(true);
@@ -105,7 +102,6 @@ public class ChangeToSubmarine : MonoBehaviour
         sr.enabled = false;
 
         playerObject.SetActive(true);
-        playerCamera.SetActive(true);
 
         outerLight.SetActive(false);
         innerLight.SetActive(true);

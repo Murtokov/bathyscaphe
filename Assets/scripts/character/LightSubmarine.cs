@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class Light : MonoBehaviour
+public class LightSubmarine : MonoBehaviour
 {
     private Transform parentTransform;
     private Vector3 initialLocalPosition;
@@ -9,16 +9,9 @@ public class Light : MonoBehaviour
 
     void Start()
     {
-        if (transform.parent != null)
-        {
-            parentTransform = transform.parent.parent;
-            initialLocalPosition = transform.localPosition;
-            initialZRotation = transform.localEulerAngles.z;
-        }
-        else
-        {
-            Debug.LogWarning("Этот объект не имеет родителя!");
-        }
+        parentTransform = transform.parent.parent;
+        initialLocalPosition = transform.localPosition;
+        initialZRotation = transform.localEulerAngles.z;
     }
 
     void LateUpdate()
@@ -30,12 +23,10 @@ public class Light : MonoBehaviour
             {
                 float flipSign = parentSR.flipX ? -1f : 1f;
 
-                // Инвертируем позицию по X
                 transform.localPosition = new Vector3(initialLocalPosition.x * flipSign,
                                                       initialLocalPosition.y,
                                                       initialLocalPosition.z);
 
-                // Инвертируем угол Z, чтобы светил в противоположную сторону
                 transform.localEulerAngles = new Vector3(
                     transform.localEulerAngles.x,
                     transform.localEulerAngles.y,
