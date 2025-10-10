@@ -12,7 +12,7 @@ public class SubmarineCamera : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(rb.linearVelocity);
+        // Debug.Log(rb.linearVelocity);
 
         float offsetX = CalculateOffset(rb.linearVelocity.x);
         float offsetY = CalculateOffset(rb.linearVelocity.y);
@@ -22,6 +22,7 @@ public class SubmarineCamera : MonoBehaviour
 
     private float CalculateOffset(float velocity)
     {
-        return - Mathf.Sign(velocity) * Mathf.Min((float)(Math.Pow((1.0 / 80.0) * Math.Abs(velocity) - Math.Pow(2, 1.0 / 3.0), 3) + 2), 2);
+        return -Mathf.Sign(velocity) *
+               Mathf.Min((float)(Math.Pow((1.0 / 80.0) * Math.Abs(velocity) - Math.Pow(2, 1.0 / 3.0), 3) + 2), 2);
     }
 }
