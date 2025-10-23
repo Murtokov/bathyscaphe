@@ -45,8 +45,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -609.7571, y: 498.82355}
-  m_SizeDelta: {x: 700, y: 80}
+  m_AnchoredPosition: {x: -428.59412, y: 459.92346}
+  m_SizeDelta: {x: 1062.3259, y: 157.8001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1125879228291434783
 CanvasRenderer:
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 70, y: 80}
+  m_CellSize: {x: 100, y: 110}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -238,6 +238,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: slot
       objectReference: {fileID: 0}
+    - target: {fileID: 2867346318310117613, guid: 45416d79e0eec924baaa044a5d207cee, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867346318310117613, guid: 45416d79e0eec924baaa044a5d207cee, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 4804752118928099728, guid: 45416d79e0eec924baaa044a5d207cee, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -347,7 +355,7 @@ MonoBehaviour:
   isClicked: 0
   iconGameObject: {fileID: 0}
   itemDecsription: {fileID: 0}
-  decsription: 
+  description: 
   itemName: 
   id: 0
 --- !u!224 &4767821680580063895 stripped

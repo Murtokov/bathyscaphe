@@ -24,7 +24,7 @@ public class InventoryManager : MonoBehaviour
         {
             if (slot.isEmpty == true)
             {
-                slot.decsription = decsription;
+                slot.description = decsription;
                 slot.isEmpty = false;
                 slot.itemName = itemName;
                 slot.SetIcon(icon);

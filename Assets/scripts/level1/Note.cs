@@ -19,11 +19,13 @@ public class Note : MonoBehaviour
             {
                 if (opened)
                 {
+                    Time.timeScale = 1f;
                     scroll.SetActive(false);
                     opened = false;
                 }
                 else
                 {
+                    Time.timeScale = 0f;
                     scroll.SetActive(true);
                     opened = true;
                 }
