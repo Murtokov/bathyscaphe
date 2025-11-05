@@ -33,4 +33,27 @@ public class InventoryManager : MonoBehaviour
         }
         return false;
     }
+    public bool CheckItem(string itemName)
+    {
+        foreach (InventorySlot slot in slots)
+        {
+            if (slot.isEmpty == false && slot.itemName == itemName)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    public bool DeleteItem(string itemName)
+    {
+        foreach (InventorySlot slot in slots)
+        {
+            if (slot.isEmpty == false && slot.itemName == itemName)
+            {
+                slot.NullifyData();
+                return true;
+            }
+        }
+        return false;
+    }
 }
