@@ -2,7 +2,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ShieldPlates : MonoBehaviour
+public class PickableItem : MonoBehaviour
 {
     public bool inTrigger = false;
     public GameObject contextHint;

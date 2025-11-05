@@ -30,8 +30,11 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     }
     public void SetIcon(Sprite icon)
     {
-        iconGameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
-        iconGameObject.GetComponent<Image>().sprite = icon;
+        Image image = iconGameObject.GetComponent<Image>();
+        image.color = new Color(1, 1, 1, 1);
+        image.sprite = icon;
+        image.preserveAspect = true;
+        image.type = Image.Type.Simple;
     }
     public void NullifyData()
     {
