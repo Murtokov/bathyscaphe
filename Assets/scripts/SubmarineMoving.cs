@@ -1,0 +1,69 @@
+using UnityEngine;
+
+public class SubmarineMoving : MonoBehaviour
+{
+    public float walkSpeed;
+    public float jumpSpeed;
+
+    public float maxSpeedX;
+    public float maxSpeedY;
+
+    private Rigidbody2D rb;
+    private SpriteRenderer sr;
+    private ParticleSystem ps;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        ps = GetComponent<ParticleSystem>();
+    }
+
+    void Update()
+    {
+    }
+
+    void FixedUpdate()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+        rb.AddForce(new Vector2(
+            horizontalInput * walkSpeed, 
+            verticalInput * jumpSpeed));
+
+        var vel = ps.velocityOverLifetime;
+        vel.enabled = true;
+        vel.x = -rb.linearVelocity.x / 5;
+        vel.y = -rb.linearVelocity.y / 5;
+
+        Vector2 velocity = rb.linearVelocity;
+        velocity.x = Mathf.Clamp(velocity.x, -maxSpeedX, maxSpeedX);
+        velocity.y = Mathf.Clamp(velocity.y, -maxSpeedY, maxSpeedY);
+        rb.linearVelocity = velocity;
+
+
+        if (horizontalInput > 0.01f)
+            sr.flipX = false;
+        else if (horizontalInput < -0.01f)
+            sr.flipX = true;
+
+        var shape = ps.shape;
+        Vector3 shapePos = shape.position;
+        shapePos.x = Mathf.Abs(shapePos.x) * (sr.flipX ? 1 : -1);
+        shape.position = shapePos;
+    }
+
+    public void StopSubmarine()
+    {
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
+        
+        if (ps != null)
+        {
+            var vel = ps.velocityOverLifetime;
+            vel.enabled = false;
+        }
+    }
+}
