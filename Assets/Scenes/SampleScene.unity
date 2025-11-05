@@ -6572,6 +6572,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1182748848}
     m_Modifications:
+    - target: {fileID: 1163671519890941437, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15687296
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163671519890941437, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.59351
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252601564508289321, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 97e856ba2d39f1f438f6283ae05a5c3f, type: 2}
+    - target: {fileID: 1468718023002629398, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
+      propertyPath: onLadder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468718023002629398, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
+      propertyPath: jumpForce
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468718023002629398, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
+      propertyPath: maxSpeedX
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468718023002629398, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
+      propertyPath: maxSpeedY
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468718023002629398, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
+      propertyPath: walkSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1468718023002629398, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: groundCheckDistance
       value: 0.6
@@ -6596,13 +6628,29 @@ PrefabInstance:
       propertyPath: UVModule.sprites.Array.data[0].sprite
       value: 
       objectReference: {fileID: 21300000, guid: 310d1be568feacc41aeb6a1e27ccd727, type: 3}
+    - target: {fileID: 1841318415972566307, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 97e856ba2d39f1f438f6283ae05a5c3f, type: 2}
     - target: {fileID: 1917844766726384247, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1917844766726384247, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 97e856ba2d39f1f438f6283ae05a5c3f, type: 2}
+    - target: {fileID: 1917844766726384247, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
+      propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1917844766726384247, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_LinearDamping
-      value: 0.05
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1917844766726384247, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
+      propertyPath: m_AngularDamping
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2354097686388192834, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_IsActive
