@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "bathyscaphe.sln"
+    "dotnet.defaultSolution": "bathyscaphe_2.sln"
 }
