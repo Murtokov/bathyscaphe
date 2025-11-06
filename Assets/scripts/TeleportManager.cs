@@ -59,14 +59,20 @@ public class TeleportManager : MonoBehaviour
         if (collision.CompareTag("Submarine"))
         {
             inTrigger = false;
-            contextHint.SetActive(false);
+            if (contextHint != null)
+            {
+                contextHint.SetActive(false);
+            }
         }
         if (collision.CompareTag("Player"))
         {
             if (SceneManager.GetActiveScene().name == "Level1MainBase")
             {
-                inTrigger = true;
-                contextHint.SetActive(true);
+                inTrigger = false;
+                if (contextHint != null)
+                {
+                    contextHint.SetActive(false);
+                }
             }
         }
     }
