@@ -6590,7 +6590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1468718023002629398, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: jumpForce
-      value: 15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1468718023002629398, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: maxSpeedX
@@ -6602,7 +6602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1468718023002629398, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: walkSpeed
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1468718023002629398, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: groundCheckDistance
@@ -6634,7 +6634,7 @@ PrefabInstance:
       objectReference: {fileID: 6200000, guid: 97e856ba2d39f1f438f6283ae05a5c3f, type: 2}
     - target: {fileID: 1917844766726384247, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_Mass
-      value: 2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1917844766726384247, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_Material
@@ -6646,11 +6646,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1917844766726384247, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_LinearDamping
-      value: 2
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1917844766726384247, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_AngularDamping
-      value: 3
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2354097686388192834, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_IsActive
