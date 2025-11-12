@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
             rb.gravityScale = 0f;
         }
 
-        // Проверка земли
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, groundLayers);
         isGrounded = hit.collider != null;
 
@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float targetSpeed = horizontalInput * walkSpeed;
 
-        // Прямое управление velocity (самый плавный вариант)
+        // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ velocity (пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
         rb.linearVelocity = new Vector2(targetSpeed, rb.linearVelocity.y);
     }
 

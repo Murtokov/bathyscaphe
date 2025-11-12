@@ -10,6 +10,14 @@ public class Lever : MonoBehaviour
     public GameObject contextHint;
     void Start()
     {
+        Level1MainBase level1MainBase = new Level1MainBase();
+        SavesManager.SaveConfig<Level1MainBase>(level1MainBase, "Level1MainBase");
+        Level1ParkourRoom level1ParkourRoom = new Level1ParkourRoom();
+        SavesManager.SaveConfig<Level1ParkourRoom>(level1ParkourRoom, "Level1ParkourRoom");
+        Level1UpperBaseLeftSide level1UpperBaseLeftSide= new Level1UpperBaseLeftSide();
+        SavesManager.SaveConfig<Level1UpperBaseLeftSide>(level1UpperBaseLeftSide, "Level1UpperBaseLeftSide");
+        Level1UpperBaseRightSide level1UpperBaseRightSide= new Level1UpperBaseRightSide();
+        SavesManager.SaveConfig<Level1UpperBaseRightSide>(level1UpperBaseRightSide, "Level1UpperBaseRightSide");
         contextHint = transform.GetChild(0).gameObject;
         contextHint.SetActive(false);
         if (switched)
