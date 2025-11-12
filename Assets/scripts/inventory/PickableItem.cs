@@ -1,6 +1,6 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PickableItem : MonoBehaviour
 {
@@ -8,13 +8,23 @@ public class PickableItem : MonoBehaviour
     public GameObject contextHint;
     public string decsription = "You will get 10% extra shield";
     public string itemName = "shield plate";
+    public string fieldName = "";
     void Start()
     {
         contextHint = transform.GetChild(0).gameObject;
         contextHint.SetActive(false);
+        string sceneName = SceneManager.GetActiveScene().name;
+        object config = SavesManager.LoadConfigForScene(sceneName);
+        if (config != null)
+        {
+            var field = config.GetType().GetField(fieldName);
+            if (field != null && (bool)field.GetValue(config))
+            {
+                gameObject.SetActive(false);
+            }
+        }
     }
 
-    [System.Obsolete]
     public void Update()
     {
         if (inTrigger)
@@ -25,6 +35,19 @@ public class PickableItem : MonoBehaviour
                 if (Inventory.AddItem(transform.GetComponent<SpriteRenderer>().sprite, decsription, itemName))
                 {
                     Destroy(gameObject);
+                }
+                string sceneName = SceneManager.GetActiveScene().name;
+                object config = SavesManager.LoadConfigForScene(sceneName);
+                if (config != null)
+                {
+                    var field = config.GetType().GetField(fieldName);
+                    if (field != null)
+                    {
+                        field.SetValue(config, true);
+                        var method = typeof(SavesManager).GetMethod("SaveConfig")
+                            .MakeGenericMethod(config.GetType());
+                        method.Invoke(null, new object[] { config, sceneName });
+                    }
                 }
             }
         }

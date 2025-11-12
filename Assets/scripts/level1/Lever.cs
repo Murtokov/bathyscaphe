@@ -1,6 +1,7 @@
 using Microsoft.Unity.VisualStudio.Editor;
 using UnityEditor.Rendering.Universal;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Lever : MonoBehaviour
 {
@@ -8,25 +9,32 @@ public class Lever : MonoBehaviour
     public Sprite spriteOff;
     private bool inTrigger = false, switched = false;
     public GameObject contextHint;
+    public string fieldName;
     void Start()
     {
-        Level1MainBase level1MainBase = new Level1MainBase();
-        SavesManager.SaveConfig<Level1MainBase>(level1MainBase, "Level1MainBase");
-        Level1ParkourRoom level1ParkourRoom = new Level1ParkourRoom();
-        SavesManager.SaveConfig<Level1ParkourRoom>(level1ParkourRoom, "Level1ParkourRoom");
-        Level1UpperBaseLeftSide level1UpperBaseLeftSide= new Level1UpperBaseLeftSide();
-        SavesManager.SaveConfig<Level1UpperBaseLeftSide>(level1UpperBaseLeftSide, "Level1UpperBaseLeftSide");
-        Level1UpperBaseRightSide level1UpperBaseRightSide= new Level1UpperBaseRightSide();
-        SavesManager.SaveConfig<Level1UpperBaseRightSide>(level1UpperBaseRightSide, "Level1UpperBaseRightSide");
         contextHint = transform.GetChild(0).gameObject;
         contextHint.SetActive(false);
+        string sceneName = SceneManager.GetActiveScene().name;
+        object config = SavesManager.LoadConfigForScene(sceneName);
+        if (config != null)
+        {
+            var field = config.GetType().GetField(fieldName);
+            if (field != null)
+            {
+                switched = (bool)field.GetValue(config);
+            }
+        }
         if (switched)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteOff;
+            GameObject lever = GameObject.FindGameObjectWithTag("Light");
+            lever.transform.GetChild(0).gameObject.SetActive(true);
         }
         if (!switched)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteOn;
+            GameObject lever = GameObject.FindGameObjectWithTag("Light");
+            lever.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
     public void Update()
@@ -48,6 +56,19 @@ public class Lever : MonoBehaviour
                     switched = false;
                     GameObject lever = GameObject.FindGameObjectWithTag("Light");
                     lever.transform.GetChild(0).gameObject.SetActive(false);
+                }
+                string sceneName = SceneManager.GetActiveScene().name;
+                object config = SavesManager.LoadConfigForScene(sceneName);
+                if (config != null)
+                {
+                    var field = config.GetType().GetField(fieldName);
+                    if (field != null)
+                    {
+                        field.SetValue(config, switched);
+                        var method = typeof(SavesManager).GetMethod("SaveConfig")
+                            .MakeGenericMethod(config.GetType());
+                        method.Invoke(null, new object[] { config, sceneName });
+                    }
                 }
             }
         }

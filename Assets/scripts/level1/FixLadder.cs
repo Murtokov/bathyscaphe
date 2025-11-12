@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FixLadder : MonoBehaviour
 {
@@ -20,9 +21,23 @@ public class FixLadder : MonoBehaviour
                 {
                     transform.parent.GetChild(1).gameObject.SetActive(true);
                     transform.parent.GetComponent<LadderManager>().isFixed = true;
+                    string sceneName = SceneManager.GetActiveScene().name;
+                    object config = SavesManager.LoadConfigForScene(sceneName);
+                    if (config != null)
+                    {
+                        var field = config.GetType().GetField("isLadderFixed");
+                        if (field != null)
+                        {
+                            field.SetValue(config, true);
+                            var method = typeof(SavesManager).GetMethod("SaveConfig")
+                                .MakeGenericMethod(config.GetType());
+                            method.Invoke(null, new object[] { config, sceneName });
+                        }
+                    }
                     gameObject.SetActive(false);
                 }
                 contextHint.SetActive(false);
+                SavesManager.SaveProgress();
             }
         }
     }

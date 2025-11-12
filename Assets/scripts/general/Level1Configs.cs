@@ -1,3 +1,5 @@
+using System;
+using System.Reflection;
 using UnityEngine;
 
 [System.Serializable]
@@ -26,4 +28,12 @@ public class Level1UpperBaseLeftSide
 public class Level1UpperBaseRightSide
 {
     public bool areLogsCollected = false;
+}
+
+[System.Serializable]
+public class Level1Ocean
+{
+    public bool isOctopusDefeated = false;
+    public bool isDoorToLevel2Opened = false;
+    public Vector3 lastPosition = new Vector3(391, -327, 0);
 }

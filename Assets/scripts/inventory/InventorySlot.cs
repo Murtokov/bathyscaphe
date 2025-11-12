@@ -1,10 +1,7 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using Unity.VisualScripting;
 
 public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -13,7 +10,6 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public TMP_Text itemDecsription;
     public string description;
     public string itemName;
-    public int id;
     public void Awake()
     {
         iconGameObject = transform.GetChild(0).gameObject;
@@ -42,6 +38,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         iconGameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0);
         iconGameObject.GetComponent<Image>().sprite = null;
         itemDecsription.text = "";
+        description = "";
         itemName = "";
         isClicked = false;
     }

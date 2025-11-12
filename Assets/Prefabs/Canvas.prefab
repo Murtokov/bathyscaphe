@@ -691,6 +691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   escapeMenu: {fileID: 8635913994244062375}
+  settingsMenu: {fileID: 3628877871477178740}
 --- !u!1 &3011300705705965259
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,9 +945,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: NewGame
+      - m_Target: {fileID: 3276490465295171307}
+        m_TargetAssemblyTypeName: EscapeMenu, Assembly-CSharp
+        m_MethodName: SaveGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1196,7 +1197,7 @@ RectTransform:
   m_GameObject: {fileID: 3628877871477178740}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 1.2999998, y: 1.2999998, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2106071208107738543}
@@ -1208,7 +1209,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 68}
+  m_AnchoredPosition: {x: 0, y: 68.00001}
   m_SizeDelta: {x: 310, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2211374775970510055
