@@ -1,5 +1,3 @@
-using Microsoft.Unity.VisualStudio.Editor;
-using UnityEditor.Rendering.Universal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,9 +5,10 @@ public class Lever : MonoBehaviour
 {
     public Sprite spriteOn;
     public Sprite spriteOff;
-    private bool inTrigger = false, switched = false;
     public GameObject contextHint;
     public string fieldName;
+    private bool inTrigger = false, switched = false;
+
     void Start()
     {
         contextHint = transform.GetChild(0).gameObject;
@@ -24,12 +23,14 @@ public class Lever : MonoBehaviour
                 switched = (bool)field.GetValue(config);
             }
         }
+
         if (switched)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteOff;
             GameObject lever = GameObject.FindGameObjectWithTag("Light");
             lever.transform.GetChild(0).gameObject.SetActive(true);
         }
+
         if (!switched)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteOn;
@@ -37,6 +38,7 @@ public class Lever : MonoBehaviour
             lever.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
+
     public void Update()
     {
         if (inTrigger)
@@ -57,6 +59,7 @@ public class Lever : MonoBehaviour
                     GameObject lever = GameObject.FindGameObjectWithTag("Light");
                     lever.transform.GetChild(0).gameObject.SetActive(false);
                 }
+
                 string sceneName = SceneManager.GetActiveScene().name;
                 object config = SavesManager.LoadConfigForScene(sceneName);
                 if (config != null)
@@ -82,6 +85,7 @@ public class Lever : MonoBehaviour
             contextHint.SetActive(true);
         }
     }
+
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

@@ -422,7 +422,7 @@ Rigidbody2D:
   m_Mass: 100
   m_LinearDamping: 0.05
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -453,6 +453,7 @@ MonoBehaviour:
   rotationSpeed: 1
   maxSpeed: 40
   freeMaxSpeed: 40
+  damage: 8
 --- !u!60 &4907974240163926343
 PolygonCollider2D:
   m_ObjectHideFlags: 0

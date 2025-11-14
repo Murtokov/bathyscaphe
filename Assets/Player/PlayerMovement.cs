@@ -9,11 +9,11 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayers;
 
     public bool onLadder = false;
-    private bool ladderMode = false;
+    private float horizontalInput;
     private bool isGrounded = true;
+    private bool ladderMode = false;
 
     private Rigidbody2D rb;
-    private float horizontalInput;
 
     void Start()
     {

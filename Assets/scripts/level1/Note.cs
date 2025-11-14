@@ -1,16 +1,16 @@
-using Microsoft.Unity.VisualStudio.Editor;
-using UnityEditor.Rendering.Universal;
 using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-    private bool inTrigger = false, opened = false;
     public GameObject scroll, contextHint;
+    private bool inTrigger = false, opened = false;
+
     public void Start()
     {
         contextHint = transform.GetChild(0).gameObject;
         contextHint.SetActive(false);
     }
+
     public void Update()
     {
         if (inTrigger)
@@ -41,6 +41,7 @@ public class Note : MonoBehaviour
             contextHint.SetActive(true);
         }
     }
+
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

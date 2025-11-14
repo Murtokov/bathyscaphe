@@ -13,13 +13,16 @@ namespace DefaultNamespace
         [Range(0f, 10f)] public float rotationSpeed = 1f;
         [Range(0f, 1000f)] public float maxSpeed = 40f;
         [Range(0f, 1000f)] public float freeMaxSpeed = 40f;
+        [Range(0f, 100f)] public float damage = 10f;
         private Rigidbody2D _rb;
 
         private Rigidbody2D _submarine;
+        private SubmarineLife _submarineLife;
 
         private void Start()
         {
             _submarine = GameObject.FindGameObjectWithTag("Submarine").GetComponent<Rigidbody2D>();
+            _submarineLife = GameObject.FindGameObjectWithTag("Submarine").GetComponent<SubmarineLife>();
             _rb = GetComponent<Rigidbody2D>();
         }
 
@@ -44,6 +47,7 @@ namespace DefaultNamespace
             {
                 var direction = (_rb.position - _submarine.position).normalized;
                 _rb.AddForce(direction * collisionRebound, ForceMode2D.Impulse);
+                _submarineLife.Damage(damage);
             }
         }
 

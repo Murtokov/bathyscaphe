@@ -626,6 +626,7 @@ MonoBehaviour:
   rotationSpeed: 3
   maxSpeed: 40
   freeMaxSpeed: 40
+  damage: 12
 --- !u!1 &7101297467227689801
 GameObject:
   m_ObjectHideFlags: 0
