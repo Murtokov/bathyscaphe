@@ -18,6 +18,8 @@ public class TeleportManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                SaveLastScene(gameObject.name);
+                SaveLastPosition();
                 SceneManager.LoadScene(gameObject.name);
             }
         }
@@ -37,8 +39,17 @@ public class TeleportManager : MonoBehaviour
             }
             else
             {
-                inTrigger = true;
-                contextHint.SetActive(true);
+                if (SceneManager.GetActiveScene().name == "Level1OctopusArena")
+                {
+                    SaveLastScene(gameObject.name);
+                    SaveLastPosition();
+                    SceneManager.LoadScene(gameObject.name);
+                }
+                else
+                {
+                    inTrigger = true;
+                    contextHint.SetActive(true);
+                }
             }
         }
         if (collision.CompareTag("Player"))
@@ -50,6 +61,7 @@ public class TeleportManager : MonoBehaviour
             }
             else
             {
+                SaveLastScene(gameObject.name);
                 SceneManager.LoadScene(gameObject.name);
             }
         }
@@ -75,5 +87,18 @@ public class TeleportManager : MonoBehaviour
                 }
             }
         }
+    }
+    public void SaveLastScene(string sceneName)
+    {
+        MainConfig mainConfig = SavesManager.LoadConfig<MainConfig>("MainConfig");
+        mainConfig.lastScene = sceneName;
+        SavesManager.SaveConfig<MainConfig>(mainConfig, "MainConfig");
+    }
+    public void SaveLastPosition()
+    {
+        SubmarineConfig submarineConfig = SavesManager.LoadConfig<SubmarineConfig>("SubmarineConfig");
+        GameObject submarine = GameObject.FindGameObjectWithTag("Submarine");
+        submarineConfig.lastPosition = submarine.transform.position;
+        SavesManager.SaveConfig<SubmarineConfig>(submarineConfig, "SubmarineConfig");
     }
 }

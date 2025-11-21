@@ -20,13 +20,11 @@ public class MainMenu : MonoBehaviour
     }
     public void ContinueGame()
     {
-        SceneManager.LoadScene("Level1MainBase");
+        MainConfig mainConfig = SavesManager.LoadConfig<MainConfig>("MainConfig");
+        SceneManager.LoadScene(mainConfig.lastScene);
     }
     public void NewGame()
     {
-        MainConfig mainConfig = SavesManager.LoadConfig<MainConfig>("MainConfig");
-        mainConfig.isGameStarted = true;
-        SavesManager.SaveConfig<MainConfig>(mainConfig, "MainConfig");
         string savePath = Application.persistentDataPath;
         string[] initialFiles = Directory.GetFiles(savePath, "*Initial.json");
         foreach (string initialFile in initialFiles)
@@ -37,17 +35,13 @@ public class MainMenu : MonoBehaviour
         }
         
         Debug.Log("🎮 Инициализация сохранений завершена!");
+        MainConfig mainConfig = SavesManager.LoadConfig<MainConfig>("MainConfig");
+        mainConfig.isGameStarted = true;
+        SavesManager.SaveConfig<MainConfig>(mainConfig, "MainConfig");
         SceneManager.LoadScene("Level1MainBase");
     }
     public void QuitGame()
     {
         Application.Quit();
-    }
-    public void CopyJson(string sourcePath, string destinationPath)
-    {
-        if (File.Exists(sourcePath))
-        {
-            File.Copy(sourcePath, destinationPath, overwrite: true);
-        }
     }
 }

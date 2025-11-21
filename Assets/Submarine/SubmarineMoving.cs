@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SubmarineMoving : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class SubmarineMoving : MonoBehaviour
 
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "Level1Ocean")
+        {
+            SubmarineConfig submarineConfig = SavesManager.LoadConfig<SubmarineConfig>("SubmarineConfig");
+            transform.position = submarineConfig.lastPosition;
+        }
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         ps = GetComponent<ParticleSystem>();
