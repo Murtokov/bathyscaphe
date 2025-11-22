@@ -8,7 +8,6 @@ namespace DefaultNamespace
         [Range(0.5f, 50f)] public double maxY = 5.0;
         [Range(0.1f, 5f)] public double openingSpeed = 1.0;
 
-        private Animator _animator;
         private double _nowY = 0.0;
         private GameObject _player;
         private Transform _self;
@@ -16,7 +15,6 @@ namespace DefaultNamespace
         private void Start()
         {
             _self = GetComponent<Transform>();
-            _animator = GetComponent<Animator>();
             _player = GameObject.FindGameObjectWithTag("Player");
         }
 

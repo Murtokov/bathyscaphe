@@ -37,6 +37,8 @@ public class InventoryManager : MonoBehaviour
                 slot.isEmpty = false;
                 slot.itemName = itemName;
                 slot.SetIcon(icon);
+                string filePath = Path.Combine(Application.persistentDataPath + "/Inventory.json");
+                SaveInventory(filePath);
                 return true;
             }
         }
@@ -60,6 +62,8 @@ public class InventoryManager : MonoBehaviour
             if (slot.isEmpty == false && slot.itemName == itemName)
             {
                 slot.NullifyData();
+                string filePath = Path.Combine(Application.persistentDataPath + "/Inventory.json");
+                SaveInventory(filePath);
                 return true;
             }
         }
@@ -83,7 +87,7 @@ public class InventoryManager : MonoBehaviour
         File.WriteAllText(filePath, json);
         Debug.Log("Inventory saved to: " + filePath);
     }
-    public async void LoadInventory(string filePath)
+    public void LoadInventory(string filePath)
     {
         if (File.Exists(filePath))
         {

@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: c766a537344b5354ca97a9d608e9e07c
+guid: 82a48ae907d91034c8fb3f8be3fc750d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2691602032016701068
-    second: textures-metal-plates-old-steel-sheets-with-screws-game-background-vector-cartoon-seamless-patterns-industrial-wall-surface-with-iron-panels-grates-with-rivets_107791-10252-Photoroom_0
-  - first:
-      213: 6291938350963383535
-    second: textures-metal-plates-old-steel-sheets-with-screws-game-background-vector-cartoon-seamless-patterns-industrial-wall-surface-with-iron-panels-grates-with-rivets_107791-10252-Photoroom_1
-  - first:
-      213: -3503993984068400709
-    second: textures-metal-plates-old-steel-sheets-with-screws-game-background-vector-cartoon-seamless-patterns-industrial-wall-surface-with-iron-panels-grates-with-rivets_107791-10252-Photoroom_2
+      213: 1429817519544748392
+    second: screw_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -119,67 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: textures-metal-plates-old-steel-sheets-with-screws-game-background-vector-cartoon-seamless-patterns-industrial-wall-surface-with-iron-panels-grates-with-rivets_107791-10252-Photoroom_0
+      name: screw_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 10
-        width: 234
-        height: 234
+        x: 10
+        y: 15
+        width: 1259
+        height: 616
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c5966b1cc8a04624696385ea932e631f
-      internalID: -1042275961
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: textures-metal-plates-old-steel-sheets-with-screws-game-background-vector-cartoon-seamless-patterns-industrial-wall-surface-with-iron-panels-grates-with-rivets_107791-10252-Photoroom_1
-      rect:
-        serializedVersion: 2
-        x: 254
-        y: 10
-        width: 233
-        height: 234
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91aa23e8706105c4692f9454cf815a7b
-      internalID: 1741483296
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: textures-metal-plates-old-steel-sheets-with-screws-game-background-vector-cartoon-seamless-patterns-industrial-wall-surface-with-iron-panels-grates-with-rivets_107791-10252-Photoroom_2
-      rect:
-        serializedVersion: 2
-        x: 498
-        y: 9
-        width: 234
-        height: 234
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f2abdbc140932140827c8a0c35290f0
-      internalID: 397472358
+      spriteID: 8694812657bb7d310800000000000000
+      internalID: 1429817519544748392
       vertices: []
       indices: 
       edges: []
@@ -188,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7f02c02e584f85643b77519110928e19
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -198,9 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      textures-metal-plates-old-steel-sheets-with-screws-game-background-vector-cartoon-seamless-patterns-industrial-wall-surface-with-iron-panels-grates-with-rivets_107791-10252-Photoroom_0: -1042275961
-      textures-metal-plates-old-steel-sheets-with-screws-game-background-vector-cartoon-seamless-patterns-industrial-wall-surface-with-iron-panels-grates-with-rivets_107791-10252-Photoroom_1: 1741483296
-      textures-metal-plates-old-steel-sheets-with-screws-game-background-vector-cartoon-seamless-patterns-industrial-wall-surface-with-iron-panels-grates-with-rivets_107791-10252-Photoroom_2: 397472358
+      screw_0: 1429817519544748392
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
