@@ -19,7 +19,10 @@ public class TeleportManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 SaveLastScene(gameObject.name);
-                SaveLastPosition();
+                if (SceneManager.GetActiveScene().name != "Level1MainBase")
+                {
+                    SaveLastPosition();
+                }
                 SceneManager.LoadScene(gameObject.name);
             }
         }
