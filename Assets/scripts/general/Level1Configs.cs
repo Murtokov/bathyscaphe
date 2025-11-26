@@ -8,6 +8,7 @@ public class Level1MainBase
     public bool isLightOn = false;
     public bool isLadderFixed = false;
     public bool isPlateCollected = false;
+    public bool isRepairKitCollected = false;
 }
 
 [System.Serializable]
@@ -28,6 +29,7 @@ public class Level1UpperBaseLeftSide
 public class Level1UpperBaseRightSide
 {
     public bool areLogsCollected = false;
+    public bool isRepairKitCollected = false;
 }
 
 [System.Serializable]

@@ -23,7 +23,32 @@ public class TeleportManager : MonoBehaviour
                 {
                     SaveLastPosition();
                 }
-                SceneManager.LoadScene(gameObject.name);
+                if (gameObject.name == "Exit")
+                {
+                    InventoryManager Inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryManager>();
+                    Level1Ocean level1Ocean = SavesManager.LoadConfig<Level1Ocean>("Level1Ocean");
+                    if (level1Ocean.isDoorToLevel2Opened)
+                    {
+                        // SceneManager.LoadScene();
+                    }
+                    else
+                    {
+                        if (Inventory.DeleteItem("golden key"))
+                        {
+                            level1Ocean.isDoorToLevel2Opened = true;
+                            SavesManager.SaveConfig<Level1Ocean>(level1Ocean, "Level1Ocean");
+                            // SceneManager.LoadScene();
+                        }
+                        else
+                        {
+                            Debug.Log("WTF");
+                        }
+                    }
+                }
+                else
+                {
+                    SceneManager.LoadScene(gameObject.name);
+                }
             }
         }
     }
@@ -34,7 +59,8 @@ public class TeleportManager : MonoBehaviour
             if (gameObject.name == "Exit")
             {
                 InventoryManager Inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryManager>();
-                if (Inventory.CheckItem("golden key"))
+                Level1Ocean level1Ocean = SavesManager.LoadConfig<Level1Ocean>("Level1Ocean");
+                if (Inventory.CheckItem("golden key") || level1Ocean.isDoorToLevel2Opened)
                 {
                     contextHint.SetActive(true);
                     inTrigger = true;
@@ -55,7 +81,7 @@ public class TeleportManager : MonoBehaviour
                 }
             }
         }
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && SceneManager.GetActiveScene().name != "Level1Ocean")
         {
             if (SceneManager.GetActiveScene().name == "Level1MainBase")
             {
