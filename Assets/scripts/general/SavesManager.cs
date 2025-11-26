@@ -67,7 +67,7 @@ public class SavesManager : MonoBehaviour
     public static void SaveProgress()
     {
         InventoryManager Inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryManager>();
-        string filePath = Path.Combine(Application.persistentDataPath + "/Inventory.json");
+        string filePath = Path.Combine(Application.persistentDataPath, "Inventory.json");
         Inventory.SaveInventory(filePath);
     }
 }

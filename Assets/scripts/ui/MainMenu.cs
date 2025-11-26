@@ -7,6 +7,35 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject continueButton;
     private void Awake()
     {
+        Level1MainBase level1MainBase = new Level1MainBase();
+        Level1Ocean level1Ocean = new Level1Ocean();
+        Level1ParkourRoom level1ParkourRoom = new Level1ParkourRoom();
+        Level1UpperBaseLeftSide level1UpperBaseLeftSide = new Level1UpperBaseLeftSide();
+        Level1UpperBaseRightSide level1UpperBaseRightSide = new Level1UpperBaseRightSide();
+        MainConfig mainConfig1 = new MainConfig();
+        SubmarineConfig submarineConfig = new SubmarineConfig();
+        // orig
+        SavesManager.SaveConfig<Level1MainBase>(level1MainBase, "Level1MainBase");
+        SavesManager.SaveConfig<Level1Ocean>(level1Ocean, "Level1Ocean");
+        SavesManager.SaveConfig<Level1ParkourRoom>(level1ParkourRoom, "Level1ParkourRoom");
+        SavesManager.SaveConfig<Level1UpperBaseLeftSide>(level1UpperBaseLeftSide, "Level1UpperBaseLeftSide");
+        SavesManager.SaveConfig<Level1UpperBaseRightSide>(level1UpperBaseRightSide, "Level1UpperBaseRightSide");
+        SavesManager.SaveConfig<MainConfig>(mainConfig1, "MainConfig");
+        SavesManager.SaveConfig<SubmarineConfig>(submarineConfig, "SubmarineConfig");
+        InventoryManager Inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryManager>();
+        string filePath = Path.Combine(Application.persistentDataPath, "Inventory.json");
+        Inventory.SaveInventory(filePath);
+        // initial
+        SavesManager.SaveConfig<Level1MainBase>(level1MainBase, "Level1MainBaseInitial");
+        SavesManager.SaveConfig<Level1Ocean>(level1Ocean, "Level1OceanInitial");
+        SavesManager.SaveConfig<Level1ParkourRoom>(level1ParkourRoom, "Level1ParkourRoomInitial");
+        SavesManager.SaveConfig<Level1UpperBaseLeftSide>(level1UpperBaseLeftSide, "Level1UpperBaseLeftSideInitial");
+        SavesManager.SaveConfig<Level1UpperBaseRightSide>(level1UpperBaseRightSide, "Level1UpperBaseRightSideInitial");
+        SavesManager.SaveConfig<MainConfig>(mainConfig1, "MainConfigInitial");
+        SavesManager.SaveConfig<SubmarineConfig>(submarineConfig, "SubmarineConfigInitial");
+        filePath = Path.Combine(Application.persistentDataPath, "InventoryInitial.json");
+        Inventory.SaveInventory(filePath);
+        
         MainConfig mainConfig = SavesManager.LoadConfig<MainConfig>("MainConfig");
         continueButton = transform.GetChild(0).gameObject;
         if (mainConfig.isGameStarted)

@@ -7,6 +7,7 @@ TagManager:
   - Submarine
   - SubmarineCamera
   - PlayerCamera
+  - Inventory
   layers:
   - Default
   - TransparentFX
@@ -47,11 +48,11 @@ TagManager:
   - name: Backgrond marine
     uniqueID: 12378595
     locked: 0
-  - name: Player
-    uniqueID: 2626166779
-    locked: 0
   - name: Submarine
     uniqueID: 75445337
+    locked: 0
+  - name: Player
+    uniqueID: 2626166779
     locked: 0
   m_RenderingLayers:
   - Default
