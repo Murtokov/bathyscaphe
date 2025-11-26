@@ -5650,11 +5650,11 @@ Transform:
   m_GameObject: {fileID: 8847418723505386031}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.543, y: -0.20299987, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_LocalPosition: {x: -5.4300003, y: -2.0299988, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7680038620934505815}
+  m_Father: {fileID: 8250237881525740692}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5596493574669222417
 SpriteRenderer:
@@ -5698,7 +5698,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 75445337
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 3911900145115944293, guid: 4bc34162560802441825640621425d8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5949,9 +5949,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 1072218310878773374}
-    - targetCorrespondingSourceObject: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3160879619475768024}
     - targetCorrespondingSourceObject: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
@@ -5966,6 +5963,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6883818919774275627, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3736855304597900742}
+    - targetCorrespondingSourceObject: {fileID: 6883818919774275627, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1072218310878773374}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
 --- !u!4 &7680038620934505815 stripped
