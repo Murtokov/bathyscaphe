@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ChangeToSubmarine : MonoBehaviour
 {
-    public KeyCode interactionKey = KeyCode.E;
+    public KeyCode interactionKey = KeyCode.F;
     public string playerTag = "Player";
     public GameObject submarineCamera;
 
