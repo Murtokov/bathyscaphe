@@ -9,6 +9,7 @@ public class MorjHealth : FishHealth
     private Rigidbody2D rb;
     private bool shouldExplode = false;
     private int roofLayer;
+    private float deathTime;
 
     protected void Start()
     {
@@ -25,8 +26,6 @@ public class MorjHealth : FishHealth
                 script.enabled = false;
         }
 
-        rb.linearVelocity = Vector2.zero;   
-
         if (transform.localScale.y > 0)
         {
             transform.localScale = new Vector2(transform.localScale.x, -transform.localScale.y);
@@ -35,11 +34,13 @@ public class MorjHealth : FishHealth
 
         rb.gravityScale = -1;
         shouldExplode = true;
+
+        deathTime = Time.time;
     }
 
     protected void OnCollisionEnter2D(Collision2D collision)
     {
-        if (shouldExplode)
+        if (shouldExplode && (deathTime + 1 < Time.time))
         {
             Instantiate(explosionPrefab, transform.position, transform.rotation);
             if (collision.gameObject.layer == roofLayer)
