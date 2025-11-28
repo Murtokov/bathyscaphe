@@ -8,6 +8,8 @@ TagManager:
   - SubmarineCamera
   - PlayerCamera
   - Inventory
+  - Light
+  - TunnelFish
   layers:
   - Default
   - TransparentFX

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class MorjHealth : FishHealth
@@ -13,6 +14,16 @@ public class MorjHealth : FishHealth
 
     protected void Start()
     {
+        Level2Ocean level2Ocean = SavesManager.LoadConfig<Level2Ocean>("Level2Ocean");
+        if (level2Ocean.isWalrusDefeated)
+        {
+            portalPrefab.transform.position = level2Ocean.doorPosition;
+            portalPrefab.SetActive(true);
+        }
+        else
+        {
+            portalPrefab.SetActive(false);
+        }
         rb = GetComponent<Rigidbody2D>();
         roofLayer = LayerMask.NameToLayer("Explosive roof");
     }
@@ -45,8 +56,17 @@ public class MorjHealth : FishHealth
             Instantiate(explosionPrefab, transform.position, transform.rotation);
             if (collision.gameObject.layer == roofLayer)
             {
-                Vector2 position = new Vector2(transform.position.x, roof.position.y);
-                Instantiate(portalPrefab, position, Quaternion.identity);
+                Level2Ocean level2Ocean = SavesManager.LoadConfig<Level2Ocean>("Level2Ocean");
+                if (!level2Ocean.isWalrusDefeated)
+                {
+                    Vector2 position = new Vector2(transform.position.x, roof.position.y);
+                    // Instantiate(portalPrefab, position, Quaternion.identity);
+                    portalPrefab.transform.position = position;
+                    level2Ocean.doorPosition = position;
+                    level2Ocean.isWalrusDefeated = true;
+                    SavesManager.SaveConfig<Level2Ocean>(level2Ocean, "Level2Ocean");
+                    portalPrefab.SetActive(true);
+                }
             }
             Destroy(gameObject);
         }

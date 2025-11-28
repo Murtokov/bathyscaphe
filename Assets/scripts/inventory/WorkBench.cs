@@ -58,6 +58,7 @@ public class WorkBench : MonoBehaviour
                                 tmp *= 1.1f;
                             }
                             submarineConfig.maxHealth = (int)tmp;
+                            submarineConfig.health = (int)tmp;
                         }
                         if (s == "screw")
                         {
@@ -68,6 +69,8 @@ public class WorkBench : MonoBehaviour
                         }
                     }
                     SavesManager.SaveConfig<SubmarineConfig>(submarineConfig, "SubmarineConfig");
+                    SubmarineLife submarineLife = GameObject.FindGameObjectWithTag("Submarine").GetComponent<SubmarineLife>();
+                    submarineLife.UpdateHealth();
                     txt.text = "All Upgrades Applied";
                 }
             }

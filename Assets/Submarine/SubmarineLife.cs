@@ -5,6 +5,17 @@ public class SubmarineLife : MonoBehaviour
     public float health = 100;
     private float damageMultiplier = 1f;
 
+    public void Start()
+    {
+        UpdateHealth();
+    }
+
+    public void UpdateHealth()
+    {
+        SubmarineConfig submarineConfig = SavesManager.LoadConfig<SubmarineConfig>("SubmarineConfig");
+        health = submarineConfig.health;
+    }
+
     public void Damage(float damage)
     {
         Debug.Log(damageMultiplier);

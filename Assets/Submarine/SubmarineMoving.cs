@@ -21,6 +21,11 @@ public class SubmarineMoving : MonoBehaviour
             SubmarineConfig submarineConfig = SavesManager.LoadConfig<SubmarineConfig>("SubmarineConfig");
             transform.position = submarineConfig.lastPosition;
         }
+        if (SceneManager.GetActiveScene().name == "Level2Ocean")
+        {
+            SubmarineConfig submarineConfig = SavesManager.LoadConfig<SubmarineConfig>("SubmarineConfig");
+            transform.position = submarineConfig.lastPosition;
+        }
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         ps = GetComponent<ParticleSystem>();

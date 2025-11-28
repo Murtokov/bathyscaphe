@@ -16,8 +16,19 @@ public class SubmarineRam : MonoBehaviour
     private float previousDashTime;
     void Start()
     {
+        UpdateRam();
         submarineMoving = GetComponent<SubmarineMoving>();
         submarineLife = GetComponent<SubmarineLife>();
+    }
+
+    public void UpdateRam()
+    {
+        SubmarineConfig submarineConfig = SavesManager.LoadConfig<SubmarineConfig>("SubmarineConfig");
+        if (submarineConfig.ramEquipped)
+        {
+            damage = 40f;
+            ramDamage = 110f;
+        }
     }
 
     void Update()

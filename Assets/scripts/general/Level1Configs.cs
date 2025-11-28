@@ -37,5 +37,4 @@ public class Level1Ocean
 {
     public bool isOctopusDefeated = false;
     public bool isDoorToLevel2Opened = false;
-    public Vector3 lastPosition = new Vector3(391, -327, 0);
 }

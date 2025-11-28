@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
             Level1ParkourRoom level1ParkourRoom = new Level1ParkourRoom();
             Level1UpperBaseLeftSide level1UpperBaseLeftSide = new Level1UpperBaseLeftSide();
             Level1UpperBaseRightSide level1UpperBaseRightSide = new Level1UpperBaseRightSide();
+            Level2Ocean level2Ocean = new Level2Ocean();
             MainConfig mainConfig1 = new MainConfig();
             SubmarineConfig submarineConfig = new SubmarineConfig();
             // orig
@@ -23,6 +24,7 @@ public class MainMenu : MonoBehaviour
             SavesManager.SaveConfig<Level1ParkourRoom>(level1ParkourRoom, "Level1ParkourRoom");
             SavesManager.SaveConfig<Level1UpperBaseLeftSide>(level1UpperBaseLeftSide, "Level1UpperBaseLeftSide");
             SavesManager.SaveConfig<Level1UpperBaseRightSide>(level1UpperBaseRightSide, "Level1UpperBaseRightSide");
+            SavesManager.SaveConfig<Level2Ocean>(level2Ocean, "Level2Ocean");
             SavesManager.SaveConfig<MainConfig>(mainConfig1, "MainConfig");
             SavesManager.SaveConfig<SubmarineConfig>(submarineConfig, "SubmarineConfig");
             InventoryManager Inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryManager>();
@@ -34,6 +36,7 @@ public class MainMenu : MonoBehaviour
             SavesManager.SaveConfig<Level1ParkourRoom>(level1ParkourRoom, "Level1ParkourRoomInitial");
             SavesManager.SaveConfig<Level1UpperBaseLeftSide>(level1UpperBaseLeftSide, "Level1UpperBaseLeftSideInitial");
             SavesManager.SaveConfig<Level1UpperBaseRightSide>(level1UpperBaseRightSide, "Level1UpperBaseRightSideInitial");
+            SavesManager.SaveConfig<Level2Ocean>(level2Ocean, "Level2OceanInitial");
             SavesManager.SaveConfig<MainConfig>(mainConfig1, "MainConfigInitial");
             SavesManager.SaveConfig<SubmarineConfig>(submarineConfig, "SubmarineConfigInitial");
             filePath = Path.Combine(Application.persistentDataPath, "InventoryInitial.json");

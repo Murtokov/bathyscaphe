@@ -28,7 +28,8 @@ public class SavesManager : MonoBehaviour
             { "Level1ParkourRoom", typeof(Level1ParkourRoom) },
             { "Level1UpperBaseLeftSide", typeof(Level1UpperBaseLeftSide) },
             { "Level1UpperBaseRightSide", typeof(Level1UpperBaseRightSide) },
-            { "Level1Ocean", typeof(Level1Ocean) }
+            { "Level1Ocean", typeof(Level1Ocean) },
+            { "Level2Ocean", typeof(Level2Ocean) }
         };
     }
 

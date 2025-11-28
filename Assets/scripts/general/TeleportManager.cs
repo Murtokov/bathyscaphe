@@ -18,18 +18,15 @@ public class TeleportManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                SaveLastScene(gameObject.name);
-                if (SceneManager.GetActiveScene().name != "Level1MainBase")
-                {
-                    SaveLastPosition();
-                }
                 if (gameObject.name == "Exit")
                 {
                     InventoryManager Inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryManager>();
                     Level1Ocean level1Ocean = SavesManager.LoadConfig<Level1Ocean>("Level1Ocean");
                     if (level1Ocean.isDoorToLevel2Opened)
                     {
-                        // SceneManager.LoadScene();
+                        SaveLastScene("Level2Ocean");
+                        SaveLastPosition();
+                        SceneManager.LoadScene("Level2Ocean");
                     }
                     else
                     {
@@ -37,7 +34,9 @@ public class TeleportManager : MonoBehaviour
                         {
                             level1Ocean.isDoorToLevel2Opened = true;
                             SavesManager.SaveConfig<Level1Ocean>(level1Ocean, "Level1Ocean");
-                            // SceneManager.LoadScene();
+                            SaveLastScene("Level2Ocean");
+                            SaveLastPosition();
+                            SceneManager.LoadScene("Level2Ocean");
                         }
                         else
                         {
@@ -47,6 +46,11 @@ public class TeleportManager : MonoBehaviour
                 }
                 else
                 {
+                    SaveLastScene(gameObject.name);
+                    if (SceneManager.GetActiveScene().name != "Level1MainBase")
+                    {
+                        SaveLastPosition();
+                    }
                     SceneManager.LoadScene(gameObject.name);
                 }
             }
