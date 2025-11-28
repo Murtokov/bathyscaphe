@@ -7,6 +7,7 @@ public class SubmarineLife : MonoBehaviour
 
     public void Damage(float damage)
     {
+        Debug.Log(damageMultiplier);
         health -= damage * damageMultiplier;
         if (health <= 0)
         {

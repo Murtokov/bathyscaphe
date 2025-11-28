@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class OctopusHealth : FishHealth
 {
-
     protected override void _Die()
     {
         Sprite sprite = Resources.Load<Sprite>("golden key level1 (1)");

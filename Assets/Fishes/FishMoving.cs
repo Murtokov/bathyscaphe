@@ -43,6 +43,9 @@ namespace DefaultNamespace
 
         private void OnCollisionEnter2D(Collision2D other)
         {
+            if (!enabled) return;
+
+            Debug.Log(222);
             if (other.gameObject.CompareTag("Submarine"))
             {
                 var direction = (_rb.position - _submarine.position).normalized;

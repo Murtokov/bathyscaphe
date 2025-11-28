@@ -307,6 +307,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 38253046}
     m_Modifications:
+    - target: {fileID: 822053532746973151, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115501266546190920, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1298060748471763339, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1431840505981703004, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3657.4385
@@ -347,9 +359,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1938030758421442272, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003379080401488022, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890374853786046323, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4478622261720964667, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5577477489152916523, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047885009669798098, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6205744323252159273, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
       propertyPath: m_Name
       value: Fish (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205744323252159273, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6455496510167636974, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
       propertyPath: freeMaxSpeed
@@ -358,6 +398,30 @@ PrefabInstance:
     - target: {fileID: 6455496510167636974, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
       propertyPath: freeSwimAcceleration
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7101297467227689801, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849570959225157391, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950503851040860937, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058606389894583807, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411729135036202683, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444719566447410586, guid: 2df9a665e65d7426ca240eb4ba4bc427, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -434,7 +498,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -780,7 +844,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -1440,7 +1504,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -2052,7 +2116,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -2264,7 +2328,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -5607,7 +5671,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -5875,7 +5939,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
