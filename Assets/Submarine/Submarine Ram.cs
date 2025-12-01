@@ -33,25 +33,31 @@ public class SubmarineRam : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && dashable)
+        if (submarineMoving.isActiveAndEnabled)
         {
-            Dash();
-        }
+            if (Input.GetKeyDown(KeyCode.Space) && dashable)
+            {
+                Dash();
+            }
 
-        if (previousDashTime + dashCooldown < Time.time)
-        {
-            dashable = true;
+            if (previousDashTime + dashCooldown < Time.time)
+            {
+                dashable = true;
+            }
         }
     }
 
     private void Dash()
     {
-        Debug.Log(1);
-        submarineLife.SetTemporaryDamageMultiplier(resistanceMultiplier, ramDuration);
-        submarineMoving.Dash(dashForce);
-        dashable = false;
-        previousDashTime = Time.time;
+        if (submarineMoving.isActiveAndEnabled)
+        {
+            submarineLife.SetTemporaryDamageMultiplier(resistanceMultiplier, ramDuration);
+            submarineMoving.Dash(dashForce);
+            dashable = false;
+            previousDashTime = Time.time;
+        }
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         FishHealth fishHealth = collision.gameObject.GetComponent<FishHealth>();
