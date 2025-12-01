@@ -45,9 +45,12 @@ public class TeleportManagerLevel2 : MonoBehaviour
     }
     public void SaveLastPosition()
     {
-        SubmarineConfig submarineConfig = SavesManager.LoadConfig<SubmarineConfig>("SubmarineConfig");
-        GameObject submarine = GameObject.FindGameObjectWithTag("Submarine");
-        submarineConfig.lastPosition = submarine.transform.position;
-        SavesManager.SaveConfig<SubmarineConfig>(submarineConfig, "SubmarineConfig");
+        if (SceneManager.GetActiveScene().name == "Level2Ocean")
+        {
+            Level2Ocean level2Ocean = SavesManager.LoadConfig<Level2Ocean>("Level2Ocean");
+            GameObject submarine = GameObject.FindGameObjectWithTag("Submarine");
+            level2Ocean.lastPosition = submarine.transform.position;
+            SavesManager.SaveConfig<Level2Ocean>(level2Ocean, "Level2Ocean");
+        }
     }
 }

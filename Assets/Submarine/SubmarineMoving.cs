@@ -18,13 +18,13 @@ public class SubmarineMoving : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Level1Ocean")
         {
-            SubmarineConfig submarineConfig = SavesManager.LoadConfig<SubmarineConfig>("SubmarineConfig");
-            transform.position = submarineConfig.lastPosition;
+            Level1Ocean level1Ocean = SavesManager.LoadConfig<Level1Ocean>("Level1Ocean");
+            transform.position = level1Ocean.lastPosition;
         }
         if (SceneManager.GetActiveScene().name == "Level2Ocean")
         {
-            SubmarineConfig submarineConfig = SavesManager.LoadConfig<SubmarineConfig>("SubmarineConfig");
-            transform.position = submarineConfig.lastPosition;
+            Level2Ocean level2Ocean = SavesManager.LoadConfig<Level2Ocean>("Level2Ocean");
+            transform.position = level2Ocean.lastPosition;
         }
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
