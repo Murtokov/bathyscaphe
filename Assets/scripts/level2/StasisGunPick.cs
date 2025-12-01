@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class RamPick : MonoBehaviour
+public class StasisGunPick : MonoBehaviour
 {
     public void Start()
     {
         Level2Ocean level2Ocean = SavesManager.LoadConfig<Level2Ocean>("Level2Ocean");
-        if (level2Ocean.isRamCollected)
+        if (level2Ocean.isGunCollected)
         {
             gameObject.SetActive(false);
         }
@@ -15,15 +15,13 @@ public class RamPick : MonoBehaviour
         if (collision.CompareTag("Submarine"))
         {
             Level2Ocean level2Ocean = SavesManager.LoadConfig<Level2Ocean>("Level2Ocean");
-            level2Ocean.isRamCollected = true;
+            level2Ocean.isGunCollected = true;
             SavesManager.SaveConfig<Level2Ocean>(level2Ocean, "Level2Ocean");
             SubmarineConfig submarineConfig = SavesManager.LoadConfig<SubmarineConfig>("SubmarineConfig");
-            submarineConfig.ramEquipped = true;
+            submarineConfig.stasisGunEquipped = true;
             SavesManager.SaveConfig<SubmarineConfig>(submarineConfig, "SubmarineConfig");
             SubmarineRam submarineRam = collision.GetComponent<SubmarineRam>();
-            submarineRam.UpdateRam();
-            GameObject fishes = GameObject.FindGameObjectWithTag("TunnelFish");
-            fishes.transform.GetChild(0).gameObject.SetActive(true);
+            // submarineRam.UpdateRam();
             Destroy(gameObject);
         }
     }

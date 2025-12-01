@@ -1,5 +1,3 @@
-using System;
-using System.Reflection;
 using UnityEngine;
 
 [System.Serializable]
@@ -37,4 +35,5 @@ public class Level1Ocean
 {
     public bool isOctopusDefeated = false;
     public bool isDoorToLevel2Opened = false;
+    public Vector3 lastPosition = new Vector3(95.5f,-93.8f,0);
 }

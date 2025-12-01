@@ -9,5 +9,4 @@ public class SubmarineConfig
     public bool ramEquipped = false;
     public bool balloonEquipped = false;
     public bool stasisGunEquipped = false;
-    public Vector3 lastPosition = new Vector3(118, -88, 0);
 }
