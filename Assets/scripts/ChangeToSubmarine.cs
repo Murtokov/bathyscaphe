@@ -13,6 +13,7 @@ public class ChangeToSubmarine : MonoBehaviour
     private GameObject outerLight;  
 
     private SubmarineMoving submarineMovingScript;
+    private StasisGun submarineStasis;
     private ParticleSystem ps;
     private SpriteRenderer sr;
 
@@ -30,6 +31,8 @@ public class ChangeToSubmarine : MonoBehaviour
         outerLight.SetActive(false);
 
         submarineMovingScript = transform.parent.GetComponent<SubmarineMoving>();
+        submarineStasis = transform.parent.GetComponent<StasisGun>();
+        submarineStasis.enabled = false;
         submarineMovingScript.enabled = false;
 
         ps = transform.parent.GetComponent<ParticleSystem>();
@@ -76,6 +79,7 @@ public class ChangeToSubmarine : MonoBehaviour
 
         submarineCamera.SetActive(true);
         submarineMovingScript.enabled = true;
+        submarineStasis.enabled = true;
 
         outerLight.SetActive(true);
         innerLight.SetActive(false);
@@ -95,6 +99,7 @@ public class ChangeToSubmarine : MonoBehaviour
         Debug.Log("ToChar");
         submarineCamera.SetActive(false);
         submarineMovingScript.enabled = false;
+        submarineStasis.enabled = false;
 
         submarineMovingScript.StopSubmarine();
 

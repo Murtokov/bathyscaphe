@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -18,12 +19,17 @@ namespace DefaultNamespace
 
         private Rigidbody2D _submarine;
         private SubmarineLife _submarineLife;
+        private float _originalMaxSpeed;
+        private float _originalFreeMaxSpeed;
+        private Coroutine _stasisCoroutine;
 
         private void Start()
         {
             _submarine = GameObject.FindGameObjectWithTag("Submarine").GetComponent<Rigidbody2D>();
             _submarineLife = GameObject.FindGameObjectWithTag("Submarine").GetComponent<SubmarineLife>();
             _rb = GetComponent<Rigidbody2D>();
+            _originalMaxSpeed = maxSpeed;
+            _originalFreeMaxSpeed = freeMaxSpeed;
         }
 
         private void FixedUpdate()
@@ -41,11 +47,30 @@ namespace DefaultNamespace
             SwapDirection();
         }
 
+        public void StasisStop(float stasisDuration)
+        {
+            if (_stasisCoroutine != null)
+            {
+                StopCoroutine(_stasisCoroutine);
+            }
+
+            _stasisCoroutine = StartCoroutine(StasisStopCoroutine(stasisDuration));
+        }
+
+        private IEnumerator StasisStopCoroutine(float stasisDuration)
+        {
+            maxSpeed = 0f;
+            freeMaxSpeed = 0f;
+            yield return new WaitForSeconds(stasisDuration);
+            maxSpeed = _originalMaxSpeed;
+            freeMaxSpeed = _originalFreeMaxSpeed;
+            _stasisCoroutine = null;
+        }
+
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (!enabled) return;
 
-            Debug.Log(222);
             if (other.gameObject.CompareTag("Submarine"))
             {
                 var direction = (_rb.position - _submarine.position).normalized;
@@ -100,6 +125,14 @@ namespace DefaultNamespace
         private float GetAngle()
         {
             return (_rb.rotation % 360f + 360f + 270f) % 360f;
+        }
+
+        private void OnDestroy()
+        {
+            if (_stasisCoroutine != null)
+            {
+                StopCoroutine(_stasisCoroutine);
+            }
         }
     }
 }
