@@ -38,6 +38,11 @@ public class StasisGun : MonoBehaviour
         position.x = Mathf.Abs(position.x) * (submarineSprite.flipX ? -1 : 1);
         shootPosition.localPosition = position;
 
+        if (projectile == null)
+        {
+            isPrepairing = false;
+        }
+
         if (isPrepairing)
         {
             float percents = (Time.time - startChargeTime) / fullChargeTime;
