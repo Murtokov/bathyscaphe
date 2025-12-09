@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
             Level1UpperBaseLeftSide level1UpperBaseLeftSide = new Level1UpperBaseLeftSide();
             Level1UpperBaseRightSide level1UpperBaseRightSide = new Level1UpperBaseRightSide();
             Level2Ocean level2Ocean = new Level2Ocean();
+            Level3Ocean level3Ocean = new Level3Ocean();
             MainConfig mainConfig1 = new MainConfig();
             SubmarineConfig submarineConfig = new SubmarineConfig();
             // orig
@@ -25,6 +26,7 @@ public class MainMenu : MonoBehaviour
             SavesManager.SaveConfig<Level1UpperBaseLeftSide>(level1UpperBaseLeftSide, "Level1UpperBaseLeftSide");
             SavesManager.SaveConfig<Level1UpperBaseRightSide>(level1UpperBaseRightSide, "Level1UpperBaseRightSide");
             SavesManager.SaveConfig<Level2Ocean>(level2Ocean, "Level2Ocean");
+            SavesManager.SaveConfig<Level3Ocean>(level3Ocean, "Level3Ocean");
             SavesManager.SaveConfig<MainConfig>(mainConfig1, "MainConfig");
             SavesManager.SaveConfig<SubmarineConfig>(submarineConfig, "SubmarineConfig");
             InventoryManager Inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryManager>();
@@ -37,6 +39,7 @@ public class MainMenu : MonoBehaviour
             SavesManager.SaveConfig<Level1UpperBaseLeftSide>(level1UpperBaseLeftSide, "Level1UpperBaseLeftSideInitial");
             SavesManager.SaveConfig<Level1UpperBaseRightSide>(level1UpperBaseRightSide, "Level1UpperBaseRightSideInitial");
             SavesManager.SaveConfig<Level2Ocean>(level2Ocean, "Level2OceanInitial");
+            SavesManager.SaveConfig<Level3Ocean>(level3Ocean, "Level3OceanInitial");
             SavesManager.SaveConfig<MainConfig>(mainConfig1, "MainConfigInitial");
             SavesManager.SaveConfig<SubmarineConfig>(submarineConfig, "SubmarineConfigInitial");
             filePath = Path.Combine(Application.persistentDataPath, "InventoryInitial.json");

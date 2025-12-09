@@ -5,6 +5,7 @@ public class OctopusHealth : FishHealth
 {
     protected override void _Die()
     {
+        Debug.Log("WTFFFF?????");
         Sprite sprite = Resources.Load<Sprite>("golden key level1 (1)");
         string description = "Opens The Door";
         string itemName = "golden key";

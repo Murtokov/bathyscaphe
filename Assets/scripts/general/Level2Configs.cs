@@ -7,5 +7,5 @@ public class Level2Ocean
     public bool isGunCollected = false;
     public bool isWalrusDefeated = false;
     public Vector3 doorPosition = new Vector3(0, 0, 0);
-    public Vector3 lastPosition = new Vector3(-355f,-198.4f,0);
+    public Vector3 lastPosition = new Vector3(-429.9f,-229.8f,0);
 }

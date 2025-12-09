@@ -69,6 +69,7 @@ public class SubmarineRam : MonoBehaviour
             }
             else
             {
+                Debug.Log(Time.time);
                 fishHealth.Damage(damage);
             }
         }
