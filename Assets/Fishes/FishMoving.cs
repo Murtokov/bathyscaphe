@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Rendering.Universal;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -16,6 +17,8 @@ namespace DefaultNamespace
         [Range(0f, 1000f)] public float freeMaxSpeed = 40f;
         [Range(0f, 100f)] public float damage = 10f;
         private Rigidbody2D _rb;
+
+        private float delayTime;
 
         private Rigidbody2D _submarine;
         private SubmarineLife _submarineLife;
@@ -79,6 +82,19 @@ namespace DefaultNamespace
             }
         }
 
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (!enabled) return;
+
+            if (!collision.gameObject.CompareTag("Submarine") && delayTime + 5f < Time.time)
+            {
+                delayTime = Time.time;
+                freeSwimAcceleration *= -1;
+                // var local = transform.localScale;
+                // local.x *= -1;
+                // transform.localScale = local;
+            }
+        }
 
         private void FollowSubmarine()
         {

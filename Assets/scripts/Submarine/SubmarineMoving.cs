@@ -26,13 +26,23 @@ public class SubmarineMoving : MonoBehaviour
             Level2Ocean level2Ocean = SavesManager.LoadConfig<Level2Ocean>("Level2Ocean");
             transform.position = level2Ocean.lastPosition;
         }
+        UpdateBalloon();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         ps = GetComponent<ParticleSystem>();
     }
 
-    void Update()
+    public void UpdateBalloon()
     {
+        SubmarineConfig submarineConfig = SavesManager.LoadConfig<SubmarineConfig>("SubmarineConfig");
+        if (submarineConfig.balloonEquipped)
+        {
+            jumpSpeed = 1000f;
+        }
+        else
+        {
+            jumpSpeed = 500f;
+        }
     }
 
     void FixedUpdate()

@@ -143,7 +143,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2.41}
+  m_AnchoredPosition: {x: 0, y: 2}
   m_SizeDelta: {x: 6.55, y: 1.782}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &1661415777403567633
@@ -1271,11 +1271,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 95.5
+      value: 190.4
       objectReference: {fileID: 0}
     - target: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -93.8
+      value: -77.3
       objectReference: {fileID: 0}
     - target: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1402,9 +1402,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7922910128717651238, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8140683421757612289}
-    - targetCorrespondingSourceObject: {fileID: 7922910128717651238, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6024770404409276782}
   m_SourcePrefab: {fileID: 100100000, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
 --- !u!1 &4613185448454205849 stripped
 GameObject:
@@ -1447,24 +1444,6 @@ MonoBehaviour:
   fullChargeTime: 5
   partialChargeTime: 2
   maxProjectileSize: 10
---- !u!114 &6024770404409276782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4613185448454205849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 679047e0021851f4c904431556129293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashForce: 30
-  dashCooldown: 1
-  ramDuration: 0.5
-  resistanceMultiplier: 0.5
-  damage: 10
-  ramDamage: 20
 --- !u!4 &7680038620934505815 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}

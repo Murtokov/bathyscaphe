@@ -21,6 +21,7 @@ public class ChangeToSubmarine : MonoBehaviour
     private GameObject interier;
 
     private bool inSubmarine = false;
+    private bool stasisEquipped = false;
 
     void Start()
     {
@@ -32,6 +33,7 @@ public class ChangeToSubmarine : MonoBehaviour
 
         submarineMovingScript = transform.parent.GetComponent<SubmarineMoving>();
         submarineStasis = transform.parent.GetComponent<StasisGun>();
+        UpdateStasis();
         submarineStasis.enabled = false;
         submarineMovingScript.enabled = false;
 
@@ -72,6 +74,13 @@ public class ChangeToSubmarine : MonoBehaviour
         }
     }
 
+    public void UpdateStasis()
+    {
+        SubmarineConfig submarineConfig = SavesManager.LoadConfig<SubmarineConfig>("SubmarineConfig");
+        stasisEquipped = submarineConfig.stasisGunEquipped;
+        submarineStasis.enabled = stasisEquipped;
+    }
+
     private void SwapToSubmarine()
     {
         Debug.Log("ToSub");
@@ -79,7 +88,7 @@ public class ChangeToSubmarine : MonoBehaviour
 
         submarineCamera.SetActive(true);
         submarineMovingScript.enabled = true;
-        submarineStasis.enabled = true;
+        submarineStasis.enabled = stasisEquipped;
 
         outerLight.SetActive(true);
         innerLight.SetActive(false);

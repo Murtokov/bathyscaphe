@@ -20,8 +20,8 @@ public class StasisGunPick : MonoBehaviour
             SubmarineConfig submarineConfig = SavesManager.LoadConfig<SubmarineConfig>("SubmarineConfig");
             submarineConfig.stasisGunEquipped = true;
             SavesManager.SaveConfig<SubmarineConfig>(submarineConfig, "SubmarineConfig");
-            SubmarineRam submarineRam = collision.GetComponent<SubmarineRam>();
-            // submarineRam.UpdateRam();
+            ChangeToSubmarine changeToSubmarine = collision.transform.Find("Chair").GetComponent<ChangeToSubmarine>();
+            changeToSubmarine.UpdateStasis();
             Destroy(gameObject);
         }
     }

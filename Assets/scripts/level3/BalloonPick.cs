@@ -20,8 +20,8 @@ public class BalloonPick : MonoBehaviour
             SubmarineConfig submarineConfig = SavesManager.LoadConfig<SubmarineConfig>("SubmarineConfig");
             submarineConfig.balloonEquipped = true;
             SavesManager.SaveConfig<SubmarineConfig>(submarineConfig, "SubmarineConfig");
-            SubmarineRam submarineRam = collision.GetComponent<SubmarineRam>();
-            // submarineRam.UpdateRam();
+            SubmarineMoving submarineMoving = collision.GetComponent<SubmarineMoving>();
+            submarineMoving.UpdateBalloon();
             Destroy(gameObject);
         }
     }
