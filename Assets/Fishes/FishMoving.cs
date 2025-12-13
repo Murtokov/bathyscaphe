@@ -15,13 +15,13 @@ namespace DefaultNamespace
         [Range(0f, 1000f)] public float maxSpeed = 40f;
         [Range(0f, 1000f)] public float freeMaxSpeed = 40f;
         [Range(0f, 100f)] public float damage = 10f;
+        private float _originalFreeMaxSpeed;
+        private float _originalMaxSpeed;
         private Rigidbody2D _rb;
+        private Coroutine _stasisCoroutine;
 
         private Rigidbody2D _submarine;
         private SubmarineLife _submarineLife;
-        private float _originalMaxSpeed;
-        private float _originalFreeMaxSpeed;
-        private Coroutine _stasisCoroutine;
 
         private void Start()
         {
@@ -47,6 +47,26 @@ namespace DefaultNamespace
             SwapDirection();
         }
 
+        private void OnDestroy()
+        {
+            if (_stasisCoroutine != null)
+            {
+                StopCoroutine(_stasisCoroutine);
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (!enabled) return;
+
+            if (other.gameObject.CompareTag("Submarine"))
+            {
+                // var direction = (_rb.position - _submarine.position).normalized;
+                // _rb.AddForce(direction * collisionRebound, ForceMode2D.Impulse);
+                // _submarineLife.Damage(damage);
+            }
+        }
+
         public void StasisStop(float stasisDuration)
         {
             if (_stasisCoroutine != null)
@@ -67,44 +87,45 @@ namespace DefaultNamespace
             _stasisCoroutine = null;
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            if (!enabled) return;
-
-            if (other.gameObject.CompareTag("Submarine"))
-            {
-                var direction = (_rb.position - _submarine.position).normalized;
-                _rb.AddForce(direction * collisionRebound, ForceMode2D.Impulse);
-                _submarineLife.Damage(damage);
-            }
-        }
-
 
         private void FollowSubmarine()
         {
             var direction = (_submarine.position - _rb.position).normalized;
             _rb.AddForce(direction * acceleration);
 
-            var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            _rb.rotation = Mathf.LerpAngle(_rb.rotation, angle, rotationSpeed * Time.fixedDeltaTime);
+            var targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            var currentAngle = _rb.rotation;
+            var angleDiff = Mathf.DeltaAngle(currentAngle, targetAngle);
+
+            var angularDamping = 0.5f;
+            var torque = angleDiff * rotationSpeed - _rb.angularVelocity * angularDamping;
+
+            _rb.AddTorque(torque, ForceMode2D.Force);
+            // _rb.rotation = Mathf.LerpAngle(_rb.rotation, angle, rotationSpeed * Time.fixedDeltaTime);
 
             if (_rb.linearVelocity.magnitude > maxSpeed)
             {
-                _rb.linearVelocity = _rb.linearVelocity.normalized * maxSpeed;
+                _rb.AddForce(_rb.linearVelocity.normalized * maxSpeed);
             }
         }
 
         private void FreeSwim()
         {
             var direction = new Vector2(1, 0);
-            _rb.AddForce(direction * freeSwimAcceleration);
-            var rotation = 90f - 90f * Mathf.Sign(freeSwimAcceleration);
-            _rb.rotation = Mathf.LerpAngle(_rb.rotation, rotation, rotationSpeed * Time.fixedDeltaTime);
+            _rb.AddForce(direction * freeSwimAcceleration, ForceMode2D.Force);
 
-            if (_rb.linearVelocity.magnitude > freeMaxSpeed)
-            {
-                _rb.linearVelocity = _rb.linearVelocity.normalized * freeMaxSpeed;
-            }
+            var targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            var currentAngle = _rb.rotation;
+            var angleDiff = Mathf.DeltaAngle(currentAngle, targetAngle);
+            var angularDamping = 0.5f;
+            var torque = angleDiff * rotationSpeed - _rb.angularVelocity * angularDamping;
+
+            _rb.AddTorque(torque, ForceMode2D.Force);
+
+            // if (_rb.linearVelocity.magnitude > freeMaxSpeed)
+            // {
+            //     _rb.linearVelocity = _rb.linearVelocity.normalized * freeMaxSpeed;
+            // }
         }
 
 
@@ -125,14 +146,6 @@ namespace DefaultNamespace
         private float GetAngle()
         {
             return (_rb.rotation % 360f + 360f + 270f) % 360f;
-        }
-
-        private void OnDestroy()
-        {
-            if (_stasisCoroutine != null)
-            {
-                StopCoroutine(_stasisCoroutine);
-            }
         }
     }
 }

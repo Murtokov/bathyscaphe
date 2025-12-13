@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class MorjHealth : FishHealth
@@ -6,11 +5,11 @@ public class MorjHealth : FishHealth
     public GameObject explosionPrefab;
     public GameObject portalPrefab;
     public Transform roof;
+    private float deathTime;
 
     private Rigidbody2D rb;
-    private bool shouldExplode = false;
     private int roofLayer;
-    private float deathTime;
+    private bool shouldExplode = false;
 
     protected void Start()
     {
@@ -24,29 +23,9 @@ public class MorjHealth : FishHealth
         {
             portalPrefab.SetActive(false);
         }
+
         rb = GetComponent<Rigidbody2D>();
         roofLayer = LayerMask.NameToLayer("Explosive roof");
-    }
-
-    protected override void _Die()
-    {
-        MonoBehaviour[] scripts = GetComponents<MonoBehaviour>();
-        foreach (var script in scripts)
-        {
-            if (script != this && script.enabled)
-                script.enabled = false;
-        }
-
-        if (transform.localScale.y > 0)
-        {
-            transform.localScale = new Vector2(transform.localScale.x, -transform.localScale.y);
-        }
-        transform.rotation = Quaternion.Euler(0, 0, 0);
-
-        rb.gravityScale = -1;
-        shouldExplode = true;
-
-        deathTime = Time.time;
     }
 
     protected void OnCollisionEnter2D(Collision2D collision)
@@ -70,7 +49,30 @@ public class MorjHealth : FishHealth
                 SavesManager.SaveConfig<Level2Ocean>(level2Ocean, "Level2Ocean");
                 portalPrefab.SetActive(true);
             }
+
             Destroy(gameObject);
         }
+    }
+
+    protected override void _Die()
+    {
+        MonoBehaviour[] scripts = GetComponents<MonoBehaviour>();
+        foreach (var script in scripts)
+        {
+            if (script != this && script.enabled)
+                script.enabled = false;
+        }
+
+        if (transform.localScale.y > 0)
+        {
+            transform.localScale = new Vector2(transform.localScale.x, -transform.localScale.y);
+        }
+
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        rb.gravityScale = -1;
+        shouldExplode = true;
+
+        deathTime = Time.time;
     }
 }

@@ -18,6 +18,12 @@ public class Explosion : MonoBehaviour
         Destroy(gameObject, lifeTime);
     }
 
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
+    }
+
     private void DamageInRadius()
     {
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius, submarineLayerMask);
@@ -33,10 +39,5 @@ public class Explosion : MonoBehaviour
             Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
             rb.AddForce(explosionDirection * explosionForce, ForceMode2D.Impulse);
         }
-    }
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 }
