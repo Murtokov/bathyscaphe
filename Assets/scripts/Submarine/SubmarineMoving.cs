@@ -13,6 +13,7 @@ public class SubmarineMoving : MonoBehaviour
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
+    UIManager uIManager;
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class SubmarineMoving : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         ps = GetComponent<ParticleSystem>();
+        uIManager = GameObject.FindAnyObjectByType<UIManager>();
     }
 
     public void UpdateBalloon()
@@ -62,6 +64,9 @@ public class SubmarineMoving : MonoBehaviour
         velocity.x = Mathf.Clamp(velocity.x, -maxSpeedX, maxSpeedX);
         velocity.y = Mathf.Clamp(velocity.y, -maxSpeedY, maxSpeedY);
         rb.linearVelocity = velocity;
+        
+        
+        uIManager.UpdateSpeedUI(rb.linearVelocityX * (sr.flipX ? -1 : 1), rb.linearVelocityY);
 
 
         if (horizontalInput > 0.01f)

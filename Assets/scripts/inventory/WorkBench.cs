@@ -7,7 +7,7 @@ public class WorkBench : MonoBehaviour
     public GameObject contextHint;
     public bool inTrigger = false, isForUpgrade = false;
     public string[] ItemsName1 = {"repair kit"};
-    public string[] ItemsName2 = {"shield plate, screw"};
+    public string[] ItemsName2 = {"shield plate", "screw"};
     public TMP_Text txt;
     public string init_text;
 
@@ -50,6 +50,7 @@ public class WorkBench : MonoBehaviour
                     InventoryManager Inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryManager>();
                     foreach (string s in ItemsName2)
                     {
+                        Debug.Log(s);
                         if (s == "shield plate")
                         {
                             float tmp = submarineConfig.maxHealth;
@@ -57,6 +58,7 @@ public class WorkBench : MonoBehaviour
                             {
                                 tmp *= 1.1f;
                             }
+                            Debug.Log(tmp);
                             submarineConfig.maxHealth = (int)tmp;
                             submarineConfig.health = (int)tmp;
                         }

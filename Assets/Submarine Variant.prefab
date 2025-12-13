@@ -393,7 +393,8 @@ MonoBehaviour:
   ItemsName1:
   - repair kit
   ItemsName2:
-  - shield plate, screw
+  - shield plate
+  - screw
   txt: {fileID: 0}
   init_text: 
 --- !u!70 &4042244647720027227
@@ -873,7 +874,8 @@ MonoBehaviour:
   ItemsName1:
   - repair kit
   ItemsName2:
-  - shield plate, screw
+  - shield plate
+  - screw
   txt: {fileID: 0}
   init_text: 
 --- !u!70 &5703831046476150649
@@ -1271,11 +1273,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 190.4
+      value: 95.5
       objectReference: {fileID: 0}
     - target: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -77.3
+      value: -93.8
       objectReference: {fileID: 0}
     - target: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_LocalPosition.z
