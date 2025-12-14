@@ -736,14 +736,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0586842e334856b2e2af78a6076df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  headDirection: 0
   detectionRadius: 300
-  freeSwimAcceleration: 500
   acceleration: 5000
-  collisionRebound: 100000
-  rotationSpeed: 1
   maxSpeed: 40
+  rotationSpeed: 30
+  freeSwimAcceleration: 500
   freeMaxSpeed: 40
-  damage: 32
+  damage: 10
 --- !u!114 &161137286219236763
 MonoBehaviour:
   m_ObjectHideFlags: 0

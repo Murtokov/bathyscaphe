@@ -73,8 +73,8 @@ public static class AutoHingeChain2D
         // Не переопределяем, если ты уже настроил вручную — но можно ужесточить при желании
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = 0f; // для “костей” часто гравитацию делают 0 и тянут силой/целью
-        rb.angularDrag = 0.2f;
-        rb.drag = 0.0f;
+        rb.angularDamping = 0.2f;
+        rb.linearDamping = 0.0f;
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
     }
