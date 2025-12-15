@@ -1271,19 +1271,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< Updated upstream
-      value: 95.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -93.8
-=======
       value: 184.03494
       objectReference: {fileID: 0}
     - target: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 35.670765
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1410,12 +1402,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7922910128717651238, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8140683421757612289}
-<<<<<<< Updated upstream
-    - targetCorrespondingSourceObject: {fileID: 7922910128717651238, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6024770404409276782}
-=======
->>>>>>> Stashed changes
   m_SourcePrefab: {fileID: 100100000, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
 --- !u!1 &4613185448454205849 stripped
 GameObject:
@@ -1458,27 +1444,6 @@ MonoBehaviour:
   fullChargeTime: 5
   partialChargeTime: 2
   maxProjectileSize: 10
-<<<<<<< Updated upstream
---- !u!114 &6024770404409276782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4613185448454205849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 679047e0021851f4c904431556129293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashForce: 30
-  dashCooldown: 1
-  ramDuration: 0.5
-  resistanceMultiplier: 0.5
-  damage: 10
-  ramDamage: 20
-=======
->>>>>>> Stashed changes
 --- !u!4 &7680038620934505815 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
