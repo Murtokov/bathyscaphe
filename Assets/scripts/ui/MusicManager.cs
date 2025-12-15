@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class MusicManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource BackgroundMusic;
+    [SerializeField] public AudioSource BackgroundMusic;
     [SerializeField] private Slider slider;
     [SerializeField] private Sprite musicOn;
     [SerializeField] private Sprite musicOff;
