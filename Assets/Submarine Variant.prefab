@@ -1271,11 +1271,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< Updated upstream
       value: 95.5
       objectReference: {fileID: 0}
     - target: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_LocalPosition.y
       value: -93.8
+=======
+      value: 184.03494
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 35.670765
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1402,9 +1410,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7922910128717651238, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8140683421757612289}
+<<<<<<< Updated upstream
     - targetCorrespondingSourceObject: {fileID: 7922910128717651238, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6024770404409276782}
+=======
+>>>>>>> Stashed changes
   m_SourcePrefab: {fileID: 100100000, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
 --- !u!1 &4613185448454205849 stripped
 GameObject:
@@ -1447,6 +1458,7 @@ MonoBehaviour:
   fullChargeTime: 5
   partialChargeTime: 2
   maxProjectileSize: 10
+<<<<<<< Updated upstream
 --- !u!114 &6024770404409276782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1465,6 +1477,8 @@ MonoBehaviour:
   resistanceMultiplier: 0.5
   damage: 10
   ramDamage: 20
+=======
+>>>>>>> Stashed changes
 --- !u!4 &7680038620934505815 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5143811295527004648, guid: 377d0dbcfd612424ba00dc3551baf81d, type: 3}
