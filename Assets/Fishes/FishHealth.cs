@@ -10,11 +10,12 @@ public class FishHealth : MonoBehaviour
         if (health <= 0)
         {
             health = 0;
-            _Die();
+            Die();
         }
     }
 
-    protected virtual void _Die()
+    public virtual void Die()
     {
+        Destroy(gameObject);
     }
 }

@@ -14,10 +14,12 @@ public class PlayerMovement : MonoBehaviour
     private bool ladderMode = false;
 
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -35,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
             rb.gravityScale = 0f;
         }
 
-        // �������� �����
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, groundLayers);
         isGrounded = hit.collider != null;
 
@@ -61,7 +62,15 @@ public class PlayerMovement : MonoBehaviour
     {
         float targetSpeed = horizontalInput * walkSpeed;
 
-        // ������ ���������� velocity (����� ������� �������)
+        if (targetSpeed < 0)
+        {
+            sr.flipX = true;
+        }
+        else
+        {
+            sr.flipX = false;
+        }
+
         rb.linearVelocity = new Vector2(targetSpeed, rb.linearVelocity.y);
     }
 

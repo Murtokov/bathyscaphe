@@ -50,14 +50,11 @@ public class StasisProjectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.CompareTag("Fish"))
-        {
-            FishMoving fish = collision.gameObject.GetComponent<FishMoving>();
+        FishMoving fish = collision.gameObject.GetComponent<FishMoving>();
 
-            if (fish != null)
-            {
-                fish.StasisStop(stasisDuration);
-            }
+        if (fish != null)
+        {
+            fish.StasisStop(stasisDuration);
         }
 
         Debug.Log(collision.transform.name);

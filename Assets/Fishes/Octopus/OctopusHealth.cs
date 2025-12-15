@@ -3,20 +3,9 @@ using UnityEngine;
 
 public class OctopusHealth : FishHealth
 {
-    private bool isDead = false;
-    public override void Damage(float damage)
+    public override void Die()
     {
-        health -= damage;
-        if (!isDead && health <= 0)
-        {
-            health = 0;
-            isDead = true;
-            _Die();
-        }
-    }
-
-    protected override void _Die()
-    {
+        Debug.Log("WTFFFF?????");
         Sprite sprite = Resources.Load<Sprite>("golden key level1 (1)");
         string description = "Opens The Door";
         string itemName = "golden key";
@@ -26,6 +15,17 @@ public class OctopusHealth : FishHealth
         {
             Inventory.SaveInventory(filePath);
         }
-        Destroy(gameObject);
+        else
+        {
+            Debug.Log("WTFFFF?????");
+        }
+        if (transform.parent != null)
+        {
+            Destroy(transform.parent.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
