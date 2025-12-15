@@ -10,21 +10,25 @@ public class PlayerMovement : MonoBehaviour
 
     public bool onLadder = false;
     private float horizontalInput;
+    private float verticalInput;
     private bool isGrounded = true;
     private bool ladderMode = false;
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
+    private Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
 
         if (ladderMode && Input.GetKeyDown(KeyCode.F))
         {
@@ -44,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         }
+
+        UpdateAnimations();
     }
 
     void FixedUpdate()
@@ -76,8 +82,37 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleLadderMovement()
     {
-        float verticalInput = Input.GetAxis("Vertical");
         Vector2 ladderVelocity = new Vector2(0, verticalInput * ladderSpeed);
         rb.linearVelocity = ladderVelocity;
+    }
+
+    private void UpdateAnimations()
+    {
+        if (animator == null) return;
+
+        bool isMoving = Mathf.Abs(horizontalInput) > 0.1f && !ladderMode;
+        Debug.Log(isMoving);
+        animator.SetBool("isMoving", isMoving);
+
+        bool goingDown = rb.linearVelocity.y < -0.1f && !isGrounded && !ladderMode;
+        animator.SetBool("goingDown", goingDown);
+
+        bool goingUp = rb.linearVelocity.y > 0.1f && !isGrounded && !ladderMode;
+        animator.SetBool("goingUp", goingUp);
+
+        if (ladderMode)
+        {
+            bool isClimbing = Mathf.Abs(verticalInput) > 0.1f;
+            animator.SetBool("isMoving", isClimbing);
+
+            animator.SetBool("goingDown", false);
+            animator.SetBool("goingUp", false);
+        }
+
+        if (isGrounded && !ladderMode)
+        {
+            animator.SetBool("goingDown", false);
+            animator.SetBool("goingUp", false);
+        }
     }
 }
