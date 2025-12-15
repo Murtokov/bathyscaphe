@@ -10,11 +10,11 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private Sprite soundOff;
     [SerializeField] private GameObject soundButton;
     private float previousVolume = 1;
-    // void Awake()
-    // {
-    //     ConfigData configData = ConfigManager.LoadConfig();
-    //     slider.value = configData.volume;
-    // }
+    void Awake()
+    {
+        MainConfig mainConfig = SavesManager.LoadConfig<MainConfig>("MainConfig");
+        slider.value = mainConfig.soundVolume;
+    }
     // void Start()
     // {
     //     UpdateValue();   
@@ -47,10 +47,10 @@ public class SoundManager : MonoBehaviour
             slider.value = 0;
         }
     }
-    // public void SaveVolume()
-    // {
-    //     ConfigData configData = ConfigManager.LoadConfig();
-    //     configData.volume = soundSource.volume;
-    //     ConfigManager.SaveConfig(configData);
-    // }
+    public void SaveVolume()
+    {
+        MainConfig mainConfig = SavesManager.LoadConfig<MainConfig>("MainConfig");
+        mainConfig.soundVolume = soundSource.volume;
+        SavesManager.SaveConfig<MainConfig>(mainConfig, "MainConfig");
+    }
 }

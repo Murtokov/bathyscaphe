@@ -10,11 +10,11 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private Sprite musicOff;
     [SerializeField] private GameObject musicButton;
     private float previousVolume = 1f;
-    // void Awake()
-    // {
-    //     ConfigData configData = ConfigManager.LoadConfig();
-    //     slider.value = configData.volume;
-    // }
+    void Awake()
+    {
+        MainConfig mainConfig = SavesManager.LoadConfig<MainConfig>("MainConfig");
+        slider.value = mainConfig.musicVolume;
+    }
     void Start()
     {
         UpdateValue();   
@@ -26,7 +26,6 @@ public class MusicManager : MonoBehaviour
         {
             previousVolume = slider.value;
         }
-        Debug.Log(BackgroundMusic.volume);
         if (BackgroundMusic.volume == 0)
         {
             musicButton.GetComponent<Image>().sprite = musicOff;
@@ -48,10 +47,10 @@ public class MusicManager : MonoBehaviour
             slider.value = 0;
         }
     }
-    // public void SaveVolume()
-    // {
-    //     ConfigData configData = ConfigManager.LoadConfig();
-    //     configData.volume = AudioListener.volume;
-    //     ConfigManager.SaveConfig(configData);
-    // }
+    public void SaveVolume()
+    {
+        MainConfig mainConfig = SavesManager.LoadConfig<MainConfig>("MainConfig");
+        mainConfig.musicVolume = BackgroundMusic.volume;
+        SavesManager.SaveConfig<MainConfig>(mainConfig, "MainConfig");
+    }
 }
