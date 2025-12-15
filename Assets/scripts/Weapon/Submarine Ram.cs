@@ -37,10 +37,6 @@ public class SubmarineRam : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) && dashable)
             {
-<<<<<<< Updated upstream
-=======
-                Debug.Log("Ram");
->>>>>>> Stashed changes
                 Dash();
             }
 

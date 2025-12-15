@@ -14,19 +14,7 @@ public class FishHealth : MonoBehaviour
         }
     }
 
-<<<<<<< Updated upstream
-<<<<<<<< Updated upstream:Assets/Fishes/FishHealth.cs
-    protected virtual void _Die()
-========
-<<<<<<< Updated upstream:Assets/Submarine/SubmarineLife.cs
-    private void _Die()
-=======
     public virtual void Die()
->>>>>>> Stashed changes:Assets/Fishes/FishHealth.cs
->>>>>>>> Stashed changes:Assets/Submarine/SubmarineLife.cs
-=======
-    public virtual void Die()
->>>>>>> Stashed changes
     {
         Destroy(gameObject);
     }

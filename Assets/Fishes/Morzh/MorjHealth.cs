@@ -54,11 +54,7 @@ public class MorjHealth : FishHealth
         }
     }
 
-<<<<<<< Updated upstream
-    protected override void _Die()
-=======
     public override void Die()
->>>>>>> Stashed changes
     {
         MonoBehaviour[] scripts = GetComponents<MonoBehaviour>();
         foreach (var script in scripts)
