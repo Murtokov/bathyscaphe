@@ -3,7 +3,11 @@ using UnityEngine;
 
 public class OctopusHealth : FishHealth
 {
+<<<<<<< Updated upstream
     protected override void _Die()
+=======
+    public override void Die()
+>>>>>>> Stashed changes
     {
         Debug.Log("WTFFFF?????");
         Sprite sprite = Resources.Load<Sprite>("golden key level1 (1)");
@@ -19,6 +23,18 @@ public class OctopusHealth : FishHealth
         {
             Debug.Log("WTFFFF?????");
         }
+<<<<<<< Updated upstream
         Destroy(gameObject);
+=======
+
+        if (transform.parent != null)
+        {
+            Destroy(transform.parent.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+>>>>>>> Stashed changes
     }
 }
