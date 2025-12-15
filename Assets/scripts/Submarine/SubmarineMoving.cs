@@ -28,6 +28,7 @@ public class SubmarineMoving : MonoBehaviour
             transform.position = level2Ocean.lastPosition;
         }
         UpdateBalloon();
+        UpdateSpeed();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         ps = GetComponent<ParticleSystem>();
@@ -45,6 +46,13 @@ public class SubmarineMoving : MonoBehaviour
         {
             jumpSpeed = 500f;
         }
+    }
+
+    public void UpdateSpeed()
+    {
+        SubmarineConfig submarineConfig = SavesManager.LoadConfig<SubmarineConfig>("SubmarineConfig");
+        maxSpeedX *= submarineConfig.speed;
+        walkSpeed *= submarineConfig.speed;
     }
 
     void FixedUpdate()

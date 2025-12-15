@@ -73,6 +73,8 @@ public class WorkBench : MonoBehaviour
                     SavesManager.SaveConfig<SubmarineConfig>(submarineConfig, "SubmarineConfig");
                     SubmarineLife submarineLife = GameObject.FindGameObjectWithTag("Submarine").GetComponent<SubmarineLife>();
                     submarineLife.UpdateHealth();
+                    SubmarineMoving submarineMoving = GameObject.FindGameObjectWithTag("Submarine").GetComponent<SubmarineMoving>();
+                    submarineMoving.UpdateSpeed();
                     txt.text = "All Upgrades Applied";
                 }
             }
