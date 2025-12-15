@@ -26,12 +26,12 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
-        if (ladderMode && Input.GetKeyDown(KeyCode.E))
+        if (ladderMode && Input.GetKeyDown(KeyCode.F))
         {
             ladderMode = false;
             rb.gravityScale = 1f;
         }
-        else if (onLadder && Input.GetKeyDown(KeyCode.E))
+        else if (onLadder && Input.GetKeyDown(KeyCode.F))
         {
             ladderMode = true;
             rb.gravityScale = 0f;

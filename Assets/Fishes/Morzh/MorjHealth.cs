@@ -30,27 +30,30 @@ public class MorjHealth : FishHealth
 
     protected void OnCollisionEnter2D(Collision2D collision)
     {
-        if (shouldExplode && (deathTime + 1 < Time.time))
+        if (shouldExplode)
         {
-            Instantiate(explosionPrefab, transform.position, transform.rotation);
-            Destroy(gameObject);
-        }
-        else if (collision.gameObject.layer == roofLayer)
-        {
-            Instantiate(explosionPrefab, transform.position, transform.rotation);
-            Level2Ocean level2Ocean = SavesManager.LoadConfig<Level2Ocean>("Level2Ocean");
-            if (!level2Ocean.isWalrusDefeated)
+            if (deathTime + 1 < Time.time)
             {
-                Vector2 position = new Vector2(transform.position.x, roof.position.y);
-                // Instantiate(portalPrefab, position, Quaternion.identity);
-                portalPrefab.transform.position = position;
-                level2Ocean.doorPosition = position;
-                level2Ocean.isWalrusDefeated = true;
-                SavesManager.SaveConfig<Level2Ocean>(level2Ocean, "Level2Ocean");
-                portalPrefab.SetActive(true);
+                Instantiate(explosionPrefab, transform.position, transform.rotation);
+                Destroy(gameObject);
             }
+            else if (collision.gameObject.layer == roofLayer)
+            {
+                Instantiate(explosionPrefab, transform.position, transform.rotation);
+                Level2Ocean level2Ocean = SavesManager.LoadConfig<Level2Ocean>("Level2Ocean");
+                if (!level2Ocean.isWalrusDefeated)
+                {
+                    Vector2 position = new Vector2(transform.position.x, roof.position.y);
+                    // Instantiate(portalPrefab, position, Quaternion.identity);
+                    portalPrefab.transform.position = position;
+                    level2Ocean.doorPosition = position;
+                    level2Ocean.isWalrusDefeated = true;
+                    SavesManager.SaveConfig<Level2Ocean>(level2Ocean, "Level2Ocean");
+                    portalPrefab.SetActive(true);
+                }
 
-            Destroy(gameObject);
+                Destroy(gameObject);
+            }
         }
     }
 

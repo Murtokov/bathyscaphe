@@ -34,7 +34,10 @@ public class TeleportManagerLevel2 : MonoBehaviour
         if (collision.CompareTag("Submarine"))
         {
             inTrigger = false;
-            contextHint.SetActive(false);
+            if (contextHint != null)
+            {
+                contextHint.SetActive(false);
+            }
         }
     }
     public void SaveLastScene(string sceneName)

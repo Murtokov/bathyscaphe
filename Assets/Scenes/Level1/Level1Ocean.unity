@@ -4888,7 +4888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1301068621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7035,30 +7035,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1182748848}
     m_Modifications:
-    - target: {fileID: 1844021207356185149, guid: 5d915f1de5b6fb9459c6cf6b0aa6dfa4, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -5419895233208932523, guid: e69e5adbfebb5034d8d562e302b17262, type: 3}
-    - target: {fileID: 3412279795244742228, guid: 5d915f1de5b6fb9459c6cf6b0aa6dfa4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 2.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 3445132040960244136, guid: 5d915f1de5b6fb9459c6cf6b0aa6dfa4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 3.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 4002499790070280524, guid: 5d915f1de5b6fb9459c6cf6b0aa6dfa4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4002499790070280524, guid: 5d915f1de5b6fb9459c6cf6b0aa6dfa4, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4002499790070280524, guid: 5d915f1de5b6fb9459c6cf6b0aa6dfa4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.129
-      objectReference: {fileID: 0}
     - target: {fileID: 4613185448454205849, guid: 5d915f1de5b6fb9459c6cf6b0aa6dfa4, type: 3}
       propertyPath: m_Name
       value: Submarine Variant
