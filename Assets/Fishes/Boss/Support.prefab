@@ -9,11 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8760231027969379526}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,11 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7195264394915273897}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,11 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8608521790204737964}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,11 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8389730283802855697}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,11 +135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 901520878935911260}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,18 +172,11 @@ GameObject:
   - component: {fileID: 5036673469743016101}
   - component: {fileID: 275752754220732000}
   - component: {fileID: 3096733693861344409}
-<<<<<<< Updated upstream
-  - component: {fileID: 3784937471701225197}
-  m_Layer: 0
-  m_Name: Support
-  m_TagString: Untagged
-=======
   - component: {fileID: 3784575043065387236}
   - component: {fileID: 8459591987958911809}
   m_Layer: 13
   m_Name: Support
   m_TagString: Fish
->>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -484,11 +457,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-<<<<<<< Updated upstream
-  m_Mass: 30
-=======
   m_Mass: 5
->>>>>>> Stashed changes
   m_LinearDamping: 0.05
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -525,11 +494,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
-<<<<<<< Updated upstream
---- !u!114 &3784937471701225197
-=======
 --- !u!114 &3784575043065387236
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -538,19 +503,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1723113585508321629}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< Updated upstream
-  m_Script: {fileID: 11500000, guid: 7b0586842e334856b2e2af78a6076df5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  headDirection: 1
-  detectionRadius: 300
-  acceleration: 5000
-  maxSpeed: 40
-  rotationSpeed: 1
-  freeSwimAcceleration: 500
-  freeMaxSpeed: 40
-  damage: 10
-=======
   m_Script: {fileID: 11500000, guid: f4a9a00504696e74ab8e50e4bd0cd692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -577,7 +529,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
->>>>>>> Stashed changes
 --- !u!1 &2467985885029972236
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,11 +538,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7012640815488220585}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -622,11 +569,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6603168140463219219}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -659,11 +602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5371287859926388661}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,11 +634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4102740338056378592}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -730,11 +665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6245240974596870003}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -765,11 +696,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3758744946199295434}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -801,11 +728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7613126428867493506}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -838,11 +761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2807465986296602742}
   - component: {fileID: 3450997609173413184}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: Spot Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -925,11 +844,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4863113340091692498}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -962,11 +877,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1627759287977759691}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -998,11 +909,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4681116011357893280}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1036,11 +943,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4179646235857493255}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1071,11 +974,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 949563672223140982}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1107,11 +1006,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4440953843880159604}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1143,11 +1038,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8160968808594349342}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,11 +1070,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3934422083418156470}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 13
->>>>>>> Stashed changes
   m_Name: bone_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
